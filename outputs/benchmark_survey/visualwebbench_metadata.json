@@ -1,0 +1,19 @@
+{
+  "id": "visualwebbench",
+  "source": "visualwebbench/VisualWebBench",
+  "license": "apache-2.0",
+  "n": 1536,
+  "by_task": {
+    "web_caption": 134,
+    "webqa": 314,
+    "heading_ocr": 46,
+    "element_ocr": 245,
+    "element_ground": 413,
+    "action_prediction": 281,
+    "action_ground": 103
+  },
+  "path": "/data/WebGAP/data/benchmarks/visualwebbench/full.jsonl",
+  "bytes_gb": 0.281,
+  "subset": false,
+  "kept_old_eval_jsonl": true
+}

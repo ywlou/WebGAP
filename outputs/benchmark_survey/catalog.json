@@ -1,0 +1,203 @@
+{
+  "survey_id": "webgap_eval_space_p0",
+  "created": "2026-09-10",
+  "status": "survey_only_no_download",
+  "disk": {
+    "mount": "/data",
+    "total_gb": 295,
+    "used_gb": 46,
+    "avail_gb": 237,
+    "new_data_budget_gb": 250,
+    "planned_p1_data_gb": [8, 15]
+  },
+  "hardware": {
+    "gpu": "NVIDIA A800 80GB",
+    "existing_backbone": "Qwen/Qwen3-VL-8B-Instruct"
+  },
+  "research_questions": [
+    "RQ1: Do modern MLLMs understand webpage structure?",
+    "RQ2: When visual geometry and DOM structure conflict, what do MLLMs rely on?",
+    "RQ3: Can WebGAP use structure more effectively/controllably than LoRA or GraphToken?"
+  ],
+  "benchmarks": [
+    {
+      "id": "visualwebbench",
+      "name": "VisualWebBench",
+      "hf": "visualwebbench/VisualWebBench",
+      "task": "7-task webpage understanding and grounding",
+      "screenshot": true,
+      "web_structure": "layout/elements, no DOM",
+      "html_dom": false,
+      "n": 1536,
+      "download_gb": 1.18,
+      "license": "apache-2.0",
+      "suitable": "high",
+      "ceiling": "GPT-4V official avg 64.6; local short-EM 18.3 is metric mismatch",
+      "p1": "download_full",
+      "tier": "A",
+      "local_subset": {"path": "data/benchmarks/visualwebbench", "n": 526, "mb": 101}
+    },
+    {
+      "id": "websrc_official",
+      "name": "WebSRC v1.0 official",
+      "hf": "X-LANCE/WebSRC_v1.0",
+      "task": "structural reading comprehension EM/F1/POS",
+      "screenshot": true,
+      "web_structure": true,
+      "html_dom": true,
+      "n_pages": 6400,
+      "n_qa": 400000,
+      "download_gb": 0.649,
+      "license": "research release via X-LANCE",
+      "suitable": "high",
+      "ceiling": "local screenshot EM 92; POS is the structural metric",
+      "p1": "download_official_eval_dev",
+      "tier": "A"
+    },
+    {
+      "id": "websrc_hf_images",
+      "name": "WebSRC rootsautomation images",
+      "hf": "rootsautomation/websrc",
+      "task": "screenshot span EM",
+      "screenshot": true,
+      "html_dom": false,
+      "n_local": 800,
+      "download_gb": 0.063,
+      "suitable": "continuity only",
+      "ceiling": "saturated EM",
+      "p1": "keep_existing_do_not_expand",
+      "tier": "appendix"
+    },
+    {
+      "id": "multimodal_mind2web",
+      "name": "Multimodal-Mind2Web",
+      "hf": "osunlp/Multimodal-Mind2Web",
+      "task": "step-wise element+operation prediction",
+      "screenshot": true,
+      "web_structure": true,
+      "html_dom": true,
+      "n": 14193,
+      "splits": {
+        "train": 7775,
+        "test_task": 1339,
+        "test_website": 1019,
+        "test_domain": 4060
+      },
+      "download_gb": 4.01,
+      "loaded_gb": 22.16,
+      "license": "OpenRAIL; original Mind2Web CC-BY-4.0",
+      "suitable": "highest",
+      "ceiling": "step success often 20-50 in literature",
+      "p1": "download_test_splits_first",
+      "tier": "A"
+    },
+    {
+      "id": "mind2web_raw",
+      "name": "Mind2Web raw dump",
+      "download_gb": 300,
+      "p1": "skip_over_budget",
+      "tier": "D"
+    },
+    {
+      "id": "screenspot_v2",
+      "name": "ScreenSpot-v2",
+      "hf": "OS-Copilot/ScreenSpot-v2",
+      "task": "GUI point grounding",
+      "screenshot": true,
+      "html_dom": false,
+      "n": 1272,
+      "n_web": 436,
+      "download_gb": 1.33,
+      "license": "OS-Atlas release",
+      "suitable": "high_web_subset",
+      "ceiling": "GUI-tuned 7B often 80-90 overall; general MLLM lower",
+      "p1": "download_report_web_subset",
+      "tier": "A"
+    },
+    {
+      "id": "screenspot_pro",
+      "name": "ScreenSpot-Pro",
+      "download_gb": 3.38,
+      "suitable": "low_not_web",
+      "p1": "skip",
+      "tier": "C"
+    },
+    {
+      "id": "guiact_web_single_test",
+      "name": "GUIAct web-single test",
+      "hf": "yiye2023/GUIAct",
+      "task": "single-step web action",
+      "n": 1410,
+      "download_gb": 0.6,
+      "license": "CC-BY-4.0",
+      "suitable": "medium_high",
+      "p1": "download_test_only",
+      "tier": "A"
+    },
+    {
+      "id": "weblinx_compact",
+      "download_gb": 0.526,
+      "license": "CC-BY-NC-SA-4.0",
+      "screenshot": false,
+      "p1": "skip_no_images"
+    },
+    {
+      "id": "weblinx_full",
+      "download_gb": 318,
+      "license": "CC-BY-NC-SA-4.0",
+      "p1": "skip_over_budget"
+    },
+    {
+      "id": "webarena_original_docker",
+      "download_gb_note": "shopping 117 + reddit 107 + gitlab 155 plus wiki zim",
+      "p1": "skip_environment_too_heavy"
+    },
+    {
+      "id": "visualwebarena",
+      "p1": "skip_environment_too_heavy"
+    },
+    {
+      "id": "assistantbench",
+      "p1": "skip_live_web_hidden_test"
+    },
+    {
+      "id": "webvoyager",
+      "p1": "skip_live_web"
+    },
+    {
+      "id": "seeclick_train",
+      "download_gb": 130,
+      "p1": "skip_train_dump"
+    },
+    {
+      "id": "websight_v02",
+      "download_gb": 145,
+      "p1": "skip_synthetic_pretrain"
+    },
+    {
+      "id": "webqa_cvpr2022",
+      "p1": "excluded_not_web_structure"
+    },
+    {
+      "id": "design2code",
+      "download_gb": 0.105,
+      "p1": "optional_appendix_not_p1"
+    },
+    {
+      "id": "omniact",
+      "download_gb": 0.418,
+      "p1": "skip_mostly_desktop"
+    }
+  ],
+  "models_surveyed_not_downloaded": [
+    {"id": "Qwen/Qwen3-VL-8B-Instruct", "role": "primary", "on_disk": true},
+    {"id": "Qwen/Qwen3-VL-30B-A3B-Instruct", "role": "scaling_moe", "on_disk": false},
+    {"id": "Qwen/Qwen3-VL-32B-Instruct", "role": "scaling_dense_optional", "on_disk": false},
+    {"id": "OpenGVLab/InternVL3_5-8B-HF", "role": "cross_family", "on_disk": false},
+    {"id": "OpenGVLab/InternVL3_5-14B-HF", "role": "cross_family_primary", "on_disk": false},
+    {"id": "OpenGVLab/InternVL3_5-30B-A3B-HF", "role": "scaling_if_vram", "on_disk": false},
+    {"id": "lmms-lab/llava-onevision-qwen2-7b-ov", "role": "projector_family", "on_disk": false},
+    {"id": "openbmb/MiniCPM-V-4_5", "role": "resampler_family", "on_disk": false}
+  ],
+  "do_not_use_nonofficial_names": ["Qwen3-VL-3.8-27B"]
+}

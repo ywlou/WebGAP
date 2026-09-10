@@ -1,0 +1,13 @@
+{
+  "id": "multimodal_mind2web",
+  "hf": "osunlp/Multimodal-Mind2Web",
+  "license": "OpenRAIL; original Mind2Web CC-BY-4.0",
+  "source": "https://huggingface.co/datasets/osunlp/Multimodal-Mind2Web",
+  "paper": "https://arxiv.org/abs/2401.01614",
+  "planned_download_gb": 4.01,
+  "loaded_gb_test_only_note": "test_website+test_task+test_domain ~8.7GB uncompressed in HF dataset_info",
+  "splits": ["test_website", "test_task", "test_domain"],
+  "skip_train": true,
+  "target": "data/benchmarks/mind2web/",
+  "abort_if_actual_gt_multiplier": 2
+}

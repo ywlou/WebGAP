@@ -1,0 +1,27 @@
+{
+  "id": "screenspot_v2",
+  "source": "OS-Copilot/ScreenSpot-v2",
+  "license": "apache-2.0",
+  "n": 1272,
+  "n_web": 437,
+  "n_with_image": 1272,
+  "splits": {
+    "desktop": 334,
+    "mobile": 501,
+    "web": 437
+  },
+  "platforms": {
+    "windows": 159,
+    "macos": 147,
+    "shop": 245,
+    "ios": 238,
+    "android": 211,
+    "gitlab": 73,
+    "forum": 79,
+    "tool": 120
+  },
+  "path": "/data/WebGAP/data/benchmarks/screenspot_v2/eval.jsonl",
+  "bytes_gb": 2.794,
+  "subset": false,
+  "primary_report": "web split (screenspot_web_v2.json)"
+}

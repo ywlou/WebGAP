@@ -1,0 +1,16 @@
+{
+  "id": "multimodal_mind2web",
+  "source": "osunlp/Multimodal-Mind2Web",
+  "license": "OpenRAIL",
+  "splits": {
+    "test_website": 1019,
+    "test_task": 1339,
+    "test_domain": 4060
+  },
+  "n": 6418,
+  "n_with_image": 6407,
+  "path": "/data/WebGAP/data/benchmarks/mind2web",
+  "bytes_gb": 4.328,
+  "subset": false,
+  "train_downloaded": false
+}

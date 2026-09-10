@@ -1,0 +1,16 @@
+{
+  "metrics": {
+    "n": 1019,
+    "element_em": 0.0,
+    "action_f1": 0.21254182955290396,
+    "split": "test_website",
+    "note": "Subset-safe step metric: match predicted next-action string to official target_action_reprs (not full task SR)."
+  },
+  "benchmark": "mind2web",
+  "run_name": "qwen3vl8b_zeroshot",
+  "baseline": "zeroshot",
+  "model": "/data/WebGAP/checkpoints/Qwen3-VL-8B-Instruct",
+  "n": 1019,
+  "subset": "test_website",
+  "max_samples": -1
+}

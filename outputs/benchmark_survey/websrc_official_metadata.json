@@ -1,0 +1,68 @@
+{
+  "id": "websrc_official",
+  "source": "X-LANCE/WebSRC_v1.0",
+  "license": "cc-by-4.0",
+  "n_csv_rows_dev": 52826,
+  "n_pages": 849,
+  "n": 1697,
+  "qa_per_page": 2,
+  "seed": 42,
+  "dev_sites": [
+    [
+      "auto",
+      "01",
+      "1"
+    ],
+    [
+      "auto",
+      "08",
+      "8"
+    ],
+    [
+      "book",
+      "17",
+      "17"
+    ],
+    [
+      "game",
+      "10",
+      "10"
+    ],
+    [
+      "game",
+      "12",
+      "12"
+    ],
+    [
+      "jobs",
+      "11",
+      "11"
+    ],
+    [
+      "movie",
+      "02",
+      "2"
+    ],
+    [
+      "phone",
+      "04",
+      "4"
+    ],
+    [
+      "sports",
+      "09",
+      "9"
+    ],
+    [
+      "sports",
+      "10",
+      "10"
+    ]
+  ],
+  "with_html": 1697,
+  "with_image": 1697,
+  "subset": true,
+  "subset_note": "Official DEV websites from dataset_split.csv; 2 QA per page, seed 42. Not the hidden test leaderboard.",
+  "path": "/data/WebGAP/data/benchmarks/websrc_official/eval_dev_subset.jsonl",
+  "bytes_gb": 1.269
+}

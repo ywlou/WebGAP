@@ -1,0 +1,12 @@
+{
+  "id": "guiact_web_single_test",
+  "source": "yiye2023/GUIAct",
+  "license": "CC-BY-4.0",
+  "n": 1410,
+  "n_with_image": 1410,
+  "n_with_bbox": 1089,
+  "path": "/data/WebGAP/data/benchmarks/guiact_web_single/eval.jsonl",
+  "bytes_gb": 0.762,
+  "subset": true,
+  "subset_note": "official web-single TEST split only, not train"
+}

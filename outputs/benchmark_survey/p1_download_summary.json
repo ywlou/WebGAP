@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "note": "Five locked public benchmarks downloaded. No train splits. No Docker/WebLINX/SeeClick/WebSight.",
+  "results": {
+    "visualwebbench": {
+      "n": 1536,
+      "bytes_gb": 0.281,
+      "path": "/data/WebGAP/data/benchmarks/visualwebbench/full.jsonl",
+      "subset": false
+    },
+    "websrc_official": {
+      "n": 1697,
+      "n_pages": 849,
+      "bytes_gb": 1.269,
+      "path": "/data/WebGAP/data/benchmarks/websrc_official/eval_dev_subset.jsonl",
+      "subset": true,
+      "subset_note": "Official DEV websites; 2 QA per page, seed 42. Not hidden test."
+    },
+    "screenspot_v2": {
+      "n": 1272,
+      "n_web": 437,
+      "n_with_image": 1272,
+      "bytes_gb": 2.794,
+      "path": "/data/WebGAP/data/benchmarks/screenspot_v2/eval.jsonl",
+      "subset": false,
+      "primary_report": "web split"
+    },
+    "guiact_web_single_test": {
+      "n": 1410,
+      "n_with_image": 1410,
+      "n_with_bbox": 1089,
+      "bytes_gb": 0.762,
+      "path": "/data/WebGAP/data/benchmarks/guiact_web_single/eval.jsonl",
+      "subset": true
+    },
+    "multimodal_mind2web": {
+      "n": 6418,
+      "n_with_image": 6407,
+      "splits": {
+        "test_website": 1019,
+        "test_task": 1339,
+        "test_domain": 4060
+      },
+      "bytes_gb": 4.328,
+      "path": "/data/WebGAP/data/benchmarks/mind2web",
+      "train_downloaded": false
+    }
+  }
+}

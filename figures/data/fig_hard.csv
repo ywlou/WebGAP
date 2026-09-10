@@ -1,0 +1,10 @@
+method,run,em,f1,n
+B0 Frozen,zeroshot,0.6673333333333333,0.6679365079365079,1500
+B1 LoRA,lora_sft,0.72,0.7203809523809523,1500
+B3 GraphToken,graphtoken_sft,0.78,0.78,400
+M WebGAP,webgap_sft,0.706,0.7068253968253969,1500
+M + hard SFT,webgap_hardmix,0.9925,0.9925,400
+B1 + hard SFT,lora_hardmix,0.99,0.99,400
+B3 + hard SFT,graphtoken_hardmix,0.98,0.98,400
+−GACA,webgap_no_gaca,0.7225,0.7225,400
+Rand. anchors,webgap_rand_anchor,0.105,0.09844202898550723,400

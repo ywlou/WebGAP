@@ -1,0 +1,21 @@
+{
+  "metrics": {
+    "n": 1089,
+    "accuracy": 76.30853994490359,
+    "by_platform": {
+      "web": {
+        "n": 1089,
+        "accuracy": 76.30853994490359
+      }
+    },
+    "n_skip_no_bbox": 321,
+    "note": "Point-in-bbox on items with an absolute click box; multi-action/type-only items skipped."
+  },
+  "benchmark": "guiact",
+  "run_name": "qwen3vl8b_zeroshot",
+  "baseline": "zeroshot",
+  "model": "/data/WebGAP/checkpoints/Qwen3-VL-8B-Instruct",
+  "n": 1089,
+  "subset": "web",
+  "max_samples": -1
+}

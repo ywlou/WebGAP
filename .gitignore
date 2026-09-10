@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+.env
+.python-version
+
+# Editors / OS / Cursor
+.idea/
+.vscode/
+.cursor/
+*.swp
+.DS_Store
+
+# Secrets
+*.pem
+id_rsa
+id_rsa.pub
+
+# Hugging Face / ModelScope caches (many GB)
+.hf_cache/
+hf_home/
+ms_cache/
+.cache/
+
+# Base model weights (Qwen3-VL-8B ~17GB, plus extra HF home)
+checkpoints/
+
+# Regenerable / redownloadable datasets
+data/webforge/
+data/benchmarks/
+data/cache/
+
+# Training runs: LoRA/plugin ckpts ~98MB each, plus preds; keep metrics in docs/figures
+outputs/runs/
+outputs/tmp/
+logs/
+wandb/
+
+# Binary dumps that must never be committed
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.parquet
+*.arrow
+*.tar
+*.tar.gz
+*.zip
+*.whl
+
+# Raster dumps outside the paper-figure folders
+*.jpg
+*.jpeg
+*.png
+!figures/png/**
+!figures/pdf/**
+!docs/**/*.png
+
+# Jupyter
+.ipynb_checkpoints/

@@ -1,0 +1,57 @@
+{
+  "metrics": {
+    "n": 1536,
+    "official_avg": 79.74715364186082,
+    "by_task": {
+      "web_caption": {
+        "n": 134,
+        "rouge_1": 41.54273818474573,
+        "rouge_2": 14.182501275165013,
+        "rouge_l": 28.986418577575513,
+        "primary": 28.986418577575513
+      },
+      "webqa": {
+        "n": 314,
+        "f1": 88.03554001777268,
+        "primary": 88.03554001777268
+      },
+      "heading_ocr": {
+        "n": 46,
+        "rouge_1": 74.90164608548352,
+        "rouge_2": 70.33995593778204,
+        "rouge_l": 74.90164608548352,
+        "primary": 74.90164608548352
+      },
+      "element_ocr": {
+        "n": 245,
+        "rouge_1": 95.57356511568643,
+        "rouge_2": 95.36128870702926,
+        "rouge_l": 95.55816272831639,
+        "primary": 95.55816272831639
+      },
+      "element_ground": {
+        "n": 413,
+        "accuracy": 92.97820823244552,
+        "primary": 92.97820823244552
+      },
+      "action_prediction": {
+        "n": 281,
+        "accuracy": 90.39145907473309,
+        "primary": 90.39145907473309
+      },
+      "action_ground": {
+        "n": 103,
+        "accuracy": 87.37864077669903,
+        "primary": 87.37864077669903
+      }
+    },
+    "note": "Official VisualWebBench average of per-task primary scores (Rouge-L or accuracy or WebQA Rouge-1 F)."
+  },
+  "benchmark": "visualwebbench",
+  "run_name": "qwen3vl8b_zeroshot",
+  "baseline": "zeroshot",
+  "model": "/data/WebGAP/checkpoints/Qwen3-VL-8B-Instruct",
+  "n": 1536,
+  "subset": "web",
+  "max_samples": -1
+}

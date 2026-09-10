@@ -1,0 +1,31 @@
+{
+  "metrics": {
+    "n": 437,
+    "accuracy": 91.07551487414187,
+    "by_platform": {
+      "gitlab": {
+        "n": 73,
+        "accuracy": 87.67123287671232
+      },
+      "shop": {
+        "n": 165,
+        "accuracy": 98.18181818181819
+      },
+      "forum": {
+        "n": 79,
+        "accuracy": 84.81012658227849
+      },
+      "tool": {
+        "n": 120,
+        "accuracy": 87.5
+      }
+    }
+  },
+  "benchmark": "screenspot_v2",
+  "run_name": "qwen3vl8b_zeroshot",
+  "baseline": "zeroshot",
+  "model": "/data/WebGAP/checkpoints/Qwen3-VL-8B-Instruct",
+  "n": 437,
+  "subset": "web",
+  "max_samples": -1
+}

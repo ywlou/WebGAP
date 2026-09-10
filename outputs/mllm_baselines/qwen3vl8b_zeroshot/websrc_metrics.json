@@ -1,0 +1,17 @@
+{
+  "metrics": {
+    "n": 1697,
+    "em": 0.8674130819092516,
+    "f1": 0.903893305390758,
+    "pos": 0.7750502156815807,
+    "n_pos": 1473,
+    "note": "POS is span-aligned (map predicted text to a tid, then Jaccard of root-to-tid paths). Yes/no items excluded from POS."
+  },
+  "benchmark": "websrc",
+  "run_name": "qwen3vl8b_zeroshot",
+  "baseline": "zeroshot",
+  "model": "/data/WebGAP/checkpoints/Qwen3-VL-8B-Instruct",
+  "n": 1697,
+  "subset": "web",
+  "max_samples": -1
+}

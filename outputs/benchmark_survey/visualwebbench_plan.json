@@ -1,0 +1,13 @@
+{
+  "id": "visualwebbench",
+  "hf": "visualwebbench/VisualWebBench",
+  "license": "apache-2.0",
+  "source": "https://huggingface.co/datasets/visualwebbench/VisualWebBench",
+  "paper": "https://arxiv.org/abs/2404.05955",
+  "planned_download_gb": 1.18,
+  "keep_existing_subset": "data/benchmarks/visualwebbench/eval.jsonl",
+  "target": "data/benchmarks/visualwebbench/full.jsonl",
+  "protocol": "official 7-task prompts + Rouge-F / MCQ accuracy from VisualWebBench/utils/eval_utils.py",
+  "subset": false,
+  "abort_if_actual_gt_multiplier": 2
+}

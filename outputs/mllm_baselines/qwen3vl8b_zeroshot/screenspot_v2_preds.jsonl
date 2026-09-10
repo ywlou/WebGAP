@@ -1,0 +1,437 @@
+{"id": "ssv2_web_835", "pred": "[940, 114]", "bbox": [2321, 129, 208, 70], "platform": "gitlab", "width": 2560, "height": 1440, "question": "click the button to create a new project"}
+{"id": "ssv2_web_836", "pred": "[953, 31]", "bbox": [2401, 14, 111, 68], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view my account profile"}
+{"id": "ssv2_web_837", "pred": "[147, 32]", "bbox": [194, 15, 645, 66], "platform": "gitlab", "width": 2560, "height": 1440, "question": "search in gitlab"}
+{"id": "ssv2_web_838", "pred": "[700, 32]", "bbox": [1762, 10, 87, 72], "platform": "gitlab", "width": 2560, "height": 1440, "question": "add a new one"}
+{"id": "ssv2_web_839", "pred": "[898, 27]", "bbox": [2044, 96, 481, 187], "platform": "gitlab", "width": 2560, "height": 1440, "question": "go to personal homepage"}
+{"id": "ssv2_web_840", "pred": "[824, 370]", "bbox": [2043, 492, 483, 89], "platform": "gitlab", "width": 2560, "height": 1440, "question": "sign out"}
+{"id": "ssv2_web_841", "pred": "[190, 197]", "bbox": [427, 234, 150, 96], "platform": "gitlab", "width": 2560, "height": 1440, "question": "switch to explore projects"}
+{"id": "ssv2_web_842", "pred": "[635, 265]", "bbox": [1601, 350, 116, 66], "platform": "gitlab", "width": 2560, "height": 1440, "question": "star the project with 56 stars"}
+{"id": "ssv2_web_843", "pred": "[677, 923]", "bbox": [1704, 678, 83, 59], "platform": "gitlab", "width": 2560, "height": 1440, "question": "fork the a11y project"}
+{"id": "ssv2_web_844", "pred": "[141, 183]", "bbox": [197, 232, 1279, 68], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view issues i've created"}
+{"id": "ssv2_web_845", "pred": "[17, 32]", "bbox": [0, 0, 107, 94], "platform": "gitlab", "width": 2560, "height": 1440, "question": "goto homepage"}
+{"id": "ssv2_web_846", "pred": "[753, 335]", "bbox": [1883, 451, 119, 71], "platform": "gitlab", "width": 2560, "height": 1440, "question": "set reminder"}
+{"id": "ssv2_web_847", "pred": "[934, 687]", "bbox": [2330, 959, 167, 70], "platform": "gitlab", "width": 2560, "height": 1440, "question": "clone this project"}
+{"id": "ssv2_web_848", "pred": "[944, 163]", "bbox": [2344, 204, 190, 70], "platform": "gitlab", "width": 2560, "height": 1440, "question": "create a new issue"}
+{"id": "ssv2_web_849", "pred": "[802, 163]", "bbox": [2018, 202, 111, 67], "platform": "gitlab", "width": 2560, "height": 1440, "question": "download"}
+{"id": "ssv2_web_850", "pred": "[314, 243]", "bbox": [677, 319, 1481, 66], "platform": "gitlab", "width": 2560, "height": 1440, "question": "search or filter results"}
+{"id": "ssv2_web_851", "pred": "[304, 444]", "bbox": [537, 606, 509, 77], "platform": "gitlab", "width": 2560, "height": 1440, "question": "choose type of issue"}
+{"id": "ssv2_web_852", "pred": "[623, 558]", "bbox": [1566, 775, 74, 68], "platform": "gitlab", "width": 2560, "height": 1440, "question": "bold lettering"}
+{"id": "ssv2_web_853", "pred": "[956, 562]", "bbox": [2429, 778, 74, 66], "platform": "gitlab", "width": 2560, "height": 1440, "question": "full screen display"}
+{"id": "ssv2_web_854", "pred": "[901, 559]", "bbox": [2282, 775, 75, 68], "platform": "gitlab", "width": 2560, "height": 1440, "question": "insert tables"}
+{"id": "ssv2_web_855", "pred": "[547, 677]", "bbox": [543, 853, 1986, 282], "platform": "gitlab", "width": 2560, "height": 1440, "question": "write a description"}
+{"id": "ssv2_web_856", "pred": "[954, 242]", "bbox": [2430, 317, 67, 68], "platform": "gitlab", "width": 2560, "height": 1440, "question": "click the icon to sort by created date"}
+{"id": "ssv2_web_857", "pred": "[253, 407]", "bbox": [543, 551, 1982, 133], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view the debug build time"}
+{"id": "ssv2_web_858", "pred": "[353, 99]", "bbox": [610, 109, 610, 68], "platform": "gitlab", "width": 2560, "height": 1440, "question": "search my projects"}
+{"id": "ssv2_web_859", "pred": "[88, 376]", "bbox": [118, 502, 473, 79], "platform": "gitlab", "width": 2560, "height": 1440, "question": "switch to activity"}
+{"id": "ssv2_web_860", "pred": "[315, 274]", "bbox": [782, 372, 64, 51], "platform": "gitlab", "width": 2560, "height": 1440, "question": "delete the byte blaze assignee"}
+{"id": "ssv2_web_861", "pred": "[752, 192]", "bbox": [1764, 246, 377, 66], "platform": "gitlab", "width": 2560, "height": 1440, "question": "subscribe to rss feed"}
+{"id": "ssv2_web_862", "pred": "[222, 507]", "bbox": [542, 700, 107, 67], "platform": "gitlab", "width": 2560, "height": 1440, "question": "Click the thumbs up icon on this issue"}
+{"id": "ssv2_web_863", "pred": "[270, 507]", "bbox": [662, 702, 109, 64], "platform": "gitlab", "width": 2560, "height": 1440, "question": "Click the thumbs down icon on this issue"}
+{"id": "ssv2_web_864", "pred": "[518, 166]", "bbox": [785, 700, 67, 68], "platform": "gitlab", "width": 2560, "height": 1440, "question": "reply to emoticon"}
+{"id": "ssv2_web_865", "pred": "[418, 97]", "bbox": [1875, 204, 79, 78], "platform": "gitlab", "width": 2560, "height": 1440, "question": "click to view more information of this issue"}
+{"id": "ssv2_web_866", "pred": "[344, 812]", "bbox": [801, 1139, 196, 68], "platform": "gitlab", "width": 2560, "height": 1440, "question": "close this issue"}
+{"id": "ssv2_web_867", "pred": "[818, 97]", "bbox": [2020, 118, 183, 46], "platform": "gitlab", "width": 2560, "height": 1440, "question": "add a todo"}
+{"id": "ssv2_web_868", "pred": "[935, 107]", "bbox": [2371, 124, 66, 66], "platform": "gitlab", "width": 2560, "height": 1440, "question": "edit my profile"}
+{"id": "ssv2_web_869", "pred": "[747, 697]", "bbox": [1072, 760, 220, 72], "platform": "gitlab", "width": 2560, "height": 1440, "question": "check my followers"}
+{"id": "ssv2_web_870", "pred": "[296, 698]", "bbox": [697, 964, 141, 92], "platform": "gitlab", "width": 2560, "height": 1440, "question": "switch to groups view"}
+{"id": "ssv2_web_871", "pred": "[962, 109]", "bbox": [2407, 119, 139, 78], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view all personal projects"}
+{"id": "ssv2_web_872", "pred": "[592, 500]", "bbox": [1306, 650, 1254, 148], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view the chatgpt_plugin project"}
+{"id": "ssv2_web_873", "pred": "[974, 111]", "bbox": [2467, 123, 71, 72], "platform": "gitlab", "width": 2560, "height": 1440, "question": "close the window"}
+{"id": "ssv2_web_874", "pred": "[53, 615]", "bbox": [107, 864, 291, 57], "platform": "gitlab", "width": 2560, "height": 1440, "question": "visit docs.gitlab.com"}
+{"id": "ssv2_web_875", "pred": "[50, 883]", "bbox": [31, 1232, 769, 123], "platform": "gitlab", "width": 2560, "height": 1440, "question": "check the docs of how to use gitlab"}
+{"id": "ssv2_web_876", "pred": "[79, 67]", "bbox": [145, 21, 243, 155], "platform": "gitlab", "width": 2560, "height": 1440, "question": "switch to why gitlab doc"}
+{"id": "ssv2_web_877", "pred": "[326, 68]", "bbox": [778, 21, 165, 157], "platform": "gitlab", "width": 2560, "height": 1440, "question": "check pricing"}
+{"id": "ssv2_web_878", "pred": "[942, 68]", "bbox": [2360, 36, 167, 133], "platform": "gitlab", "width": 2560, "height": 1440, "question": "sign in"}
+{"id": "ssv2_web_879", "pred": "[630, 68]", "bbox": [1585, 19, 72, 163], "platform": "gitlab", "width": 2560, "height": 1440, "question": "click the search button "}
+{"id": "ssv2_web_880", "pred": "[319, 223]", "bbox": [598, 276, 561, 88], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view solution of ai"}
+{"id": "ssv2_web_881", "pred": "[287, 695]", "bbox": [606, 957, 418, 101], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view all solutions"}
+{"id": "ssv2_web_882", "pred": "[405, 69]", "bbox": [944, 26, 227, 133], "platform": "gitlab", "width": 2560, "height": 1440, "question": "check the resources"}
+{"id": "ssv2_web_883", "pred": "[462, 852]", "bbox": [976, 1183, 425, 94], "platform": "gitlab", "width": 2560, "height": 1440, "question": "Purchase GitLab Premium service"}
+{"id": "ssv2_web_884", "pred": "[852, 69]", "bbox": [2065, 34, 268, 134], "platform": "gitlab", "width": 2560, "height": 1440, "question": "get free trial"}
+{"id": "ssv2_web_885", "pred": "[544, 719]", "bbox": [1307, 981, 403, 120], "platform": "gitlab", "width": 2560, "height": 1440, "question": "contact sales"}
+{"id": "ssv2_web_886", "pred": "[782, 442]", "bbox": [1934, 595, 483, 93], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view supported cloud"}
+{"id": "ssv2_web_887", "pred": "[573, 140]", "bbox": [1387, 148, 206, 112], "platform": "gitlab", "width": 2560, "height": 1440, "question": "contact gitlab"}
+{"id": "ssv2_web_888", "pred": "[91, 573]", "bbox": [86, 306, 469, 692], "platform": "gitlab", "width": 2560, "height": 1440, "question": "install for ubuntu"}
+{"id": "ssv2_web_889", "pred": "[802, 588]", "bbox": [1938, 805, 332, 97], "platform": "gitlab", "width": 2560, "height": 1440, "question": "check whether installed gitlab"}
+{"id": "ssv2_web_890", "pred": "[700, 312]", "bbox": [1666, 243, 751, 799], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view efficiency"}
+{"id": "ssv2_web_891", "pred": "[718, 885]", "bbox": [1668, 1075, 748, 365], "platform": "gitlab", "width": 2560, "height": 1440, "question": "view transparency"}
+{"id": "ssv2_web_892", "pred": "[321, 742]", "bbox": [696, 1030, 280, 72], "platform": "gitlab", "width": 2560, "height": 1440, "question": "check api security"}
+{"id": "ssv2_web_893", "pred": "[893, 200]", "bbox": [2202, 219, 201, 160], "platform": "gitlab", "width": 2560, "height": 1440, "question": "switch to govern"}
+{"id": "ssv2_web_894", "pred": "[211, 200]", "bbox": [444, 213, 205, 167], "platform": "gitlab", "width": 2560, "height": 1440, "question": "switch to create"}
+{"id": "ssv2_web_895", "pred": "[144, 752]", "bbox": [109, 1037, 537, 97], "platform": "gitlab", "width": 2560, "height": 1440, "question": "select a use-case"}
+{"id": "ssv2_web_896", "pred": "[264, 455]", "bbox": [654, 634, 55, 45], "platform": "gitlab", "width": 2560, "height": 1440, "question": "switch to private visibility level"}
+{"id": "ssv2_web_897", "pred": "[264, 784]", "bbox": [662, 1106, 48, 51], "platform": "gitlab", "width": 2560, "height": 1440, "question": "enable static application security testing"}
+{"id": "ssv2_web_898", "pred": "[956, 792]", "bbox": [2412, 1113, 112, 62], "platform": "gitlab", "width": 2560, "height": 1440, "question": "enable notifications"}
+{"id": "ssv2_web_899", "pred": "[497, 743]", "bbox": [1731, 1045, 71, 53], "platform": "gitlab", "width": 2560, "height": 1440, "question": "comment to administrator"}
+{"id": "ssv2_web_900", "pred": "[873, 476]", "bbox": [2203, 659, 111, 66], "platform": "gitlab", "width": 2560, "height": 1440, "question": "download the project"}
+{"id": "ssv2_web_901", "pred": "[814, 127]", "bbox": [2028, 150, 235, 68], "platform": "gitlab", "width": 2560, "height": 1440, "question": "unstar the project"}
+{"id": "ssv2_web_902", "pred": "[252, 795]", "bbox": [578, 1105, 1913, 86], "platform": "gitlab", "width": 2560, "height": 1440, "question": "jump to data folder"}
+{"id": "ssv2_web_903", "pred": "[945, 467]", "bbox": [2403, 644, 63, 67], "platform": "gitlab", "width": 2560, "height": 1440, "question": "copy the ssh link"}
+{"id": "ssv2_web_904", "pred": "[945, 565]", "bbox": [2400, 785, 66, 70], "platform": "gitlab", "width": 2560, "height": 1440, "question": "copy the http link"}
+{"id": "ssv2_web_905", "pred": "[683, 388]", "bbox": [1660, 526, 332, 72], "platform": "gitlab", "width": 2560, "height": 1440, "question": "open the file in web ide"}
+{"id": "ssv2_web_906", "pred": "[199, 672]", "bbox": [412, 937, 170, 63], "platform": "gitlab", "width": 2560, "height": 1440, "question": "check the owner of coding_friends"}
+{"id": "ssv2_web_907", "pred": "[745, 369]", "bbox": [1871, 495, 115, 79], "platform": "gitlab", "width": 2560, "height": 1440, "question": "star the chatgpt project"}
+{"id": "ssv2_web_908", "pred": "[821, 127]", "bbox": [2068, 142, 92, 90], "platform": "shop", "width": 2560, "height": 1440, "question": "click to search in this page"}
+{"id": "ssv2_web_909", "pred": "[862, 127]", "bbox": [2173, 141, 89, 94], "platform": "shop", "width": 2560, "height": 1440, "question": "check notification"}
+{"id": "ssv2_web_910", "pred": "[257, 245]", "bbox": [632, 315, 94, 94], "platform": "shop", "width": 2560, "height": 1440, "question": "has question about scope"}
+{"id": "ssv2_web_911", "pred": "[104, 155]", "bbox": [174, 185, 537, 86], "platform": "shop", "width": 2560, "height": 1440, "question": "view orders"}
+{"id": "ssv2_web_912", "pred": "[243, 43]", "bbox": [592, 27, 79, 75], "platform": "shop", "width": 2560, "height": 1440, "question": "close the sales window"}
+{"id": "ssv2_web_913", "pred": "[111, 155]", "bbox": [172, 186, 535, 86], "platform": "shop", "width": 2560, "height": 1440, "question": "view detail of products"}
+{"id": "ssv2_web_914", "pred": "[30, 397]", "bbox": [1, 522, 174, 124], "platform": "shop", "width": 2560, "height": 1440, "question": "switch to customers"}
+{"id": "ssv2_web_915", "pred": "[237, 368]", "bbox": [230, 498, 799, 71], "platform": "shop", "width": 2560, "height": 1440, "question": "search by keyword"}
+{"id": "ssv2_web_916", "pred": "[674, 443]", "bbox": [1679, 607, 178, 71], "platform": "shop", "width": 2560, "height": 1440, "question": "adjusting the number of items displayed per page"}
+{"id": "ssv2_web_917", "pred": "[902, 247]", "bbox": [2281, 321, 168, 82], "platform": "shop", "width": 2560, "height": 1440, "question": "go back"}
+{"id": "ssv2_web_918", "pred": "[905, 124]", "bbox": [2291, 149, 196, 79], "platform": "shop", "width": 2560, "height": 1440, "question": "view my account profile"}
+{"id": "ssv2_web_919", "pred": "[114, 641]", "bbox": [234, 889, 107, 82], "platform": "shop", "width": 2560, "height": 1440, "question": "select the data item named div garg"}
+{"id": "ssv2_web_920", "pred": "[602, 367]", "bbox": [1454, 499, 202, 68], "platform": "shop", "width": 2560, "height": 1440, "question": "use filters"}
+{"id": "ssv2_web_921", "pred": "[753, 623]", "bbox": [1834, 870, 209, 70], "platform": "shop", "width": 2560, "height": 1440, "question": "view privacy policy"}
+{"id": "ssv2_web_922", "pred": "[198, 737]", "bbox": [384, 1027, 261, 77], "platform": "shop", "width": 2560, "height": 1440, "question": "view more partners"}
+{"id": "ssv2_web_923", "pred": "[776, 677]", "bbox": [1781, 944, 439, 70], "platform": "shop", "width": 2560, "height": 1440, "question": "visit magento marketplaces"}
+{"id": "ssv2_web_924", "pred": "[319, 218]", "bbox": [743, 272, 502, 92], "platform": "shop", "width": 2560, "height": 1440, "question": "view all users"}
+{"id": "ssv2_web_925", "pred": "[187, 367]", "bbox": [402, 496, 187, 75], "platform": "shop", "width": 2560, "height": 1440, "question": "reset fliter"}
+{"id": "ssv2_web_926", "pred": "[953, 427]", "bbox": [2408, 585, 90, 71], "platform": "shop", "width": 2560, "height": 1440, "question": "go to next page"}
+{"id": "ssv2_web_927", "pred": "[227, 613]", "bbox": [417, 862, 353, 57], "platform": "shop", "width": 2560, "height": 1440, "question": "enter search query"}
+{"id": "ssv2_web_928", "pred": "[54, 845]", "bbox": [33, 1186, 231, 72], "platform": "shop", "width": 2560, "height": 1440, "question": "add the first product into cart"}
+{"id": "ssv2_web_929", "pred": "[311, 874]", "bbox": [777, 1231, 53, 64], "platform": "shop", "width": 2560, "height": 1440, "question": "favorite the blueberry drink"}
+{"id": "ssv2_web_930", "pred": "[372, 212]", "bbox": [766, 256, 424, 104], "platform": "shop", "width": 2560, "height": 1440, "question": "view clothing, shoes and jewelry"}
+{"id": "ssv2_web_931", "pred": "[600, 285]", "bbox": [1440, 362, 249, 103], "platform": "shop", "width": 2560, "height": 1440, "question": "view vedio games"}
+{"id": "ssv2_web_932", "pred": "[944, 119]", "bbox": [2396, 131, 142, 79], "platform": "shop", "width": 2560, "height": 1440, "question": "check shopping cart"}
+{"id": "ssv2_web_933", "pred": "[614, 26]", "bbox": [1526, 3, 185, 78], "platform": "shop", "width": 2560, "height": 1440, "question": "check my account"}
+{"id": "ssv2_web_934", "pred": "[837, 305]", "bbox": [1826, 388, 661, 104], "platform": "shop", "width": 2560, "height": 1440, "question": "checkout"}
+{"id": "ssv2_web_935", "pred": "[976, 176]", "bbox": [2471, 222, 71, 64], "platform": "shop", "width": 2560, "height": 1440, "question": "close the cart"}
+{"id": "ssv2_web_936", "pred": "[968, 515]", "bbox": [2448, 700, 75, 92], "platform": "shop", "width": 2560, "height": 1440, "question": "delete carnation breakfast essentials nutritional drink in cart"}
+{"id": "ssv2_web_937", "pred": "[808, 512]", "bbox": [2036, 707, 92, 67], "platform": "shop", "width": 2560, "height": 1440, "question": "adjust the item quantity with 5"}
+{"id": "ssv2_web_938", "pred": "[303, 653]", "bbox": [618, 903, 330, 79], "platform": "shop", "width": 2560, "height": 1440, "question": "change password"}
+{"id": "ssv2_web_939", "pred": "[88, 490]", "bbox": [38, 676, 502, 72], "platform": "shop", "width": 2560, "height": 1440, "question": "check my downloadable products"}
+{"id": "ssv2_web_940", "pred": "[651, 500]", "bbox": [1633, 684, 81, 72], "platform": "shop", "width": 2560, "height": 1440, "question": "go to next page"}
+{"id": "ssv2_web_941", "pred": "[892, 497]", "bbox": [2266, 684, 120, 67], "platform": "shop", "width": 2560, "height": 1440, "question": "adjust the number of items shown per page"}
+{"id": "ssv2_web_942", "pred": "[472, 852]", "bbox": [1112, 1198, 224, 67], "platform": "shop", "width": 2560, "height": 1440, "question": "add the rh interiors weathered wood bundle table lamp to cart"}
+{"id": "ssv2_web_943", "pred": "[694, 817]", "bbox": [1571, 1141, 457, 82], "platform": "shop", "width": 2560, "height": 1440, "question": "comment to elmwood inn fine tea"}
+{"id": "ssv2_web_944", "pred": "[612, 499]", "bbox": [1439, 686, 464, 70], "platform": "shop", "width": 2560, "height": 1440, "question": "view ps4"}
+{"id": "ssv2_web_945", "pred": "[634, 919]", "bbox": [1525, 1302, 230, 51], "platform": "shop", "width": 2560, "height": 1440, "question": "add the first product to wish list"}
+{"id": "ssv2_web_946", "pred": "[43, 294]", "bbox": [60, 341, 130, 160], "platform": "shop", "width": 2560, "height": 1440, "question": "view previous images"}
+{"id": "ssv2_web_947", "pred": "[812, 711]", "bbox": [1864, 991, 450, 68], "platform": "shop", "width": 2560, "height": 1440, "question": "enter email address"}
+{"id": "ssv2_web_948", "pred": "[47, 422]", "bbox": [14, 570, 252, 78], "platform": "shop", "width": 2560, "height": 1440, "question": "print the page"}
+{"id": "ssv2_web_949", "pred": "[957, 451]", "bbox": [2423, 622, 82, 53], "platform": "shop", "width": 2560, "height": 1440, "question": "close current page of item"}
+{"id": "ssv2_web_950", "pred": "[254, 558]", "bbox": [518, 769, 186, 79], "platform": "shop", "width": 2560, "height": 1440, "question": "adjusting the display layout of items"}
+{"id": "ssv2_web_951", "pred": "[962, 555]", "bbox": [2434, 775, 70, 66], "platform": "shop", "width": 2560, "height": 1440, "question": "sort from largest to smallest"}
+{"id": "ssv2_web_952", "pred": "[288, 877]", "bbox": [712, 1231, 78, 70], "platform": "shop", "width": 2560, "height": 1440, "question": "next page"}
+{"id": "ssv2_web_953", "pred": "[262, 877]", "bbox": [648, 1225, 46, 78], "platform": "shop", "width": 2560, "height": 1440, "question": "page 5"}
+{"id": "ssv2_web_954", "pred": "[940, 333]", "bbox": [2364, 444, 146, 101], "platform": "shop", "width": 2560, "height": 1440, "question": "details about dead sea collection salt"}
+{"id": "ssv2_web_955", "pred": "[308, 637]", "bbox": [347, 888, 904, 71], "platform": "shop", "width": 2560, "height": 1440, "question": "enter email address"}
+{"id": "ssv2_web_956", "pred": "[572, 663]", "bbox": [1305, 919, 325, 79], "platform": "shop", "width": 2560, "height": 1440, "question": "create an account"}
+{"id": "ssv2_web_957", "pred": "[199, 665]", "bbox": [353, 926, 343, 75], "platform": "shop", "width": 2560, "height": 1440, "question": "reset the password"}
+{"id": "ssv2_web_958", "pred": "[33, 119]", "bbox": [11, 124, 470, 109], "platform": "shop", "width": 2560, "height": 1440, "question": "go to onestop market homepage"}
+{"id": "ssv2_web_959", "pred": "[346, 662]", "bbox": [857, 918, 83, 81], "platform": "shop", "width": 2560, "height": 1440, "question": "question for remote shopping assistance"}
+{"id": "ssv2_web_960", "pred": "[942, 752]", "bbox": [2381, 1052, 86, 77], "platform": "shop", "width": 2560, "height": 1440, "question": "view settings of cocowhip light"}
+{"id": "ssv2_web_961", "pred": "[134, 600]", "bbox": [224, 837, 250, 64], "platform": "shop", "width": 2560, "height": 1440, "question": "show reviews"}
+{"id": "ssv2_web_962", "pred": "[444, 718]", "bbox": [1037, 1005, 230, 68], "platform": "shop", "width": 2560, "height": 1440, "question": "add the sandals to cart"}
+{"id": "ssv2_web_963", "pred": "[600, 663]", "bbox": [1506, 922, 127, 62], "platform": "shop", "width": 2560, "height": 1440, "question": "choose size 14"}
+{"id": "ssv2_web_964", "pred": "[614, 943]", "bbox": [1523, 1306, 108, 105], "platform": "shop", "width": 2560, "height": 1440, "question": "adjust the quantity of the first product"}
+{"id": "ssv2_web_965", "pred": "[216, 802]", "bbox": [354, 1127, 413, 62], "platform": "shop", "width": 2560, "height": 1440, "question": "enter lowest price"}
+{"id": "ssv2_web_966", "pred": "[314, 465]", "bbox": [354, 637, 927, 63], "platform": "shop", "width": 2560, "height": 1440, "question": "enter product name"}
+{"id": "ssv2_web_967", "pred": "[138, 660]", "bbox": [341, 927, 275, 52], "platform": "shop", "width": 2560, "height": 1440, "question": "switch on \"show password\""}
+{"id": "ssv2_web_968", "pred": "[432, 32]", "bbox": [955, 11, 383, 78], "platform": "forum", "width": 2560, "height": 1440, "question": "search in the forum"}
+{"id": "ssv2_web_969", "pred": "[760, 33]", "bbox": [1928, 11, 405, 77], "platform": "forum", "width": 2560, "height": 1440, "question": "check my account"}
+{"id": "ssv2_web_970", "pred": "[643, 34]", "bbox": [1612, 16, 85, 71], "platform": "forum", "width": 2560, "height": 1440, "question": "check my postbox"}
+{"id": "ssv2_web_971", "pred": "[680, 33]", "bbox": [1729, 18, 161, 70], "platform": "forum", "width": 2560, "height": 1440, "question": "submit a new post"}
+{"id": "ssv2_web_972", "pred": "[82, 809]", "bbox": [206, 754, 1120, 283], "platform": "forum", "width": 2560, "height": 1440, "question": "add comment"}
+{"id": "ssv2_web_973", "pred": "[88, 127]", "bbox": [202, 155, 66, 63], "platform": "forum", "width": 2560, "height": 1440, "question": "back to previous page"}
+{"id": "ssv2_web_974", "pred": "[60, 935]", "bbox": [94, 1310, 135, 86], "platform": "forum", "width": 2560, "height": 1440, "question": "post the comment"}
+{"id": "ssv2_web_975", "pred": "[783, 373]", "bbox": [1901, 495, 241, 90], "platform": "forum", "width": 2560, "height": 1440, "question": "unsubscribe the book "}
+{"id": "ssv2_web_976", "pred": "[782, 462]", "bbox": [122, 351, 56, 45], "platform": "forum", "width": 2560, "height": 1440, "question": "unsupport the book"}
+{"id": "ssv2_web_977", "pred": "[149, 37]", "bbox": [304, 15, 181, 82], "platform": "forum", "width": 2560, "height": 1440, "question": "check the forums"}
+{"id": "ssv2_web_978", "pred": "[100, 315]", "bbox": [181, 390, 1559, 139], "platform": "forum", "width": 2560, "height": 1440, "question": "check details of the first book"}
+{"id": "ssv2_web_979", "pred": "[159, 230]", "bbox": [320, 294, 198, 78], "platform": "forum", "width": 2560, "height": 1440, "question": "check the all comments"}
+{"id": "ssv2_web_980", "pred": "[237, 231]", "bbox": [547, 297, 163, 75], "platform": "forum", "width": 2560, "height": 1440, "question": "change the sorting method"}
+{"id": "ssv2_web_981", "pred": "[257, 392]", "bbox": [550, 529, 302, 68], "platform": "forum", "width": 2560, "height": 1440, "question": "sort based on active"}
+{"id": "ssv2_web_982", "pred": "[267, 550]", "bbox": [551, 756, 305, 78], "platform": "forum", "width": 2560, "height": 1440, "question": "sort based on most commented"}
+{"id": "ssv2_web_983", "pred": "[57, 458]", "bbox": [122, 591, 57, 49], "platform": "forum", "width": 2560, "height": 1440, "question": "support the second book"}
+{"id": "ssv2_web_984", "pred": "[214, 683]", "bbox": [185, 960, 785, 148], "platform": "forum", "width": 2560, "height": 1440, "question": "view the information of book lover or not?"}
+{"id": "ssv2_web_985", "pred": "[850, 476]", "bbox": [2075, 652, 239, 86], "platform": "forum", "width": 2560, "height": 1440, "question": "subscribe the second book"}
+{"id": "ssv2_web_986", "pred": "[109, 412]", "bbox": [183, 572, 187, 48], "platform": "forum", "width": 2560, "height": 1440, "question": "view the comments of the first book"}
+{"id": "ssv2_web_987", "pred": "[159, 427]", "bbox": [382, 592, 93, 53], "platform": "forum", "width": 2560, "height": 1440, "question": "replay the comment with 82 upvotes"}
+{"id": "ssv2_web_988", "pred": "[677, 709]", "bbox": [1705, 1004, 96, 44], "platform": "forum", "width": 2560, "height": 1440, "question": "hide the no.140 comment"}
+{"id": "ssv2_web_989", "pred": "[37, 477]", "bbox": [46, 661, 119, 59], "platform": "forum", "width": 2560, "height": 1440, "question": "check the profile of user knittedjedi"}
+{"id": "ssv2_web_990", "pred": "[277, 265]", "bbox": [97, 341, 1236, 85], "platform": "forum", "width": 2560, "height": 1440, "question": "input the forum name"}
+{"id": "ssv2_web_991", "pred": "[277, 372]", "bbox": [100, 501, 1232, 82], "platform": "forum", "width": 2560, "height": 1440, "question": "input the title"}
+{"id": "ssv2_web_992", "pred": "[156, 953]", "bbox": [324, 1351, 222, 49], "platform": "forum", "width": 2560, "height": 1440, "question": "view formatting help"}
+{"id": "ssv2_web_993", "pred": "[277, 738]", "bbox": [97, 1004, 1234, 129], "platform": "forum", "width": 2560, "height": 1440, "question": "choose tag"}
+{"id": "ssv2_web_994", "pred": "[85, 870]", "bbox": [97, 1216, 252, 85], "platform": "forum", "width": 2560, "height": 1440, "question": "create the forum"}
+{"id": "ssv2_web_995", "pred": "[277, 707]", "bbox": [98, 782, 1234, 499], "platform": "forum", "width": 2560, "height": 1440, "question": "input the body of the submission"}
+{"id": "ssv2_web_996", "pred": "[101, 230]", "bbox": [204, 306, 129, 57], "platform": "forum", "width": 2560, "height": 1440, "question": "upload a image for the submission"}
+{"id": "ssv2_web_997", "pred": "[277, 285]", "bbox": [96, 373, 1236, 82], "platform": "forum", "width": 2560, "height": 1440, "question": "input an url"}
+{"id": "ssv2_web_998", "pred": "[74, 550]", "bbox": [97, 756, 356, 68], "platform": "forum", "width": 2560, "height": 1440, "question": "choose the forum of askreddit"}
+{"id": "ssv2_web_999", "pred": "[898, 337]", "bbox": [2177, 435, 280, 89], "platform": "forum", "width": 2560, "height": 1440, "question": "switch to dark mode"}
+{"id": "ssv2_web_1000", "pred": "[891, 102]", "bbox": [2176, 114, 282, 71], "platform": "forum", "width": 2560, "height": 1440, "question": "check my profile"}
+{"id": "ssv2_web_1001", "pred": "[143, 144]", "bbox": [269, 172, 223, 75], "platform": "forum", "width": 2560, "height": 1440, "question": "check the submissions"}
+{"id": "ssv2_web_1002", "pred": "[176, 587]", "bbox": [438, 829, 44, 44], "platform": "forum", "width": 2560, "height": 1440, "question": "toggle the open external links in the new tab option"}
+{"id": "ssv2_web_1003", "pred": "[175, 642]", "bbox": [435, 905, 46, 45], "platform": "forum", "width": 2560, "height": 1440, "question": "disable show thumbnails option"}
+{"id": "ssv2_web_1004", "pred": "[175, 797]", "bbox": [438, 1131, 44, 45], "platform": "forum", "width": 2560, "height": 1440, "question": "don't show post previews"}
+{"id": "ssv2_web_1005", "pred": "[247, 285]", "bbox": [440, 368, 402, 86], "platform": "forum", "width": 2560, "height": 1440, "question": "switch the language"}
+{"id": "ssv2_web_1006", "pred": "[277, 362]", "bbox": [439, 481, 563, 81], "platform": "forum", "width": 2560, "height": 1440, "question": "change the time zone"}
+{"id": "ssv2_web_1007", "pred": "[968, 863]", "bbox": [1794, 156, 70, 68], "platform": "forum", "width": 2560, "height": 1440, "question": "close the sign in box"}
+{"id": "ssv2_web_1008", "pred": "[557, 475]", "bbox": [1351, 639, 172, 93], "platform": "forum", "width": 2560, "height": 1440, "question": "follow the post"}
+{"id": "ssv2_web_1009", "pred": "[298, 605]", "bbox": [748, 851, 46, 45], "platform": "forum", "width": 2560, "height": 1440, "question": "close the message box"}
+{"id": "ssv2_web_1010", "pred": "[82, 333]", "bbox": [185, 449, 63, 60], "platform": "forum", "width": 2560, "height": 1440, "question": "share with facebook"}
+{"id": "ssv2_web_1011", "pred": "[82, 404]", "bbox": [185, 551, 63, 63], "platform": "forum", "width": 2560, "height": 1440, "question": "share to twitter/x"}
+{"id": "ssv2_web_1012", "pred": "[961, 35]", "bbox": [2429, 19, 83, 74], "platform": "forum", "width": 2560, "height": 1440, "question": "search in the website"}
+{"id": "ssv2_web_1013", "pred": "[19, 37]", "bbox": [12, 16, 93, 77], "platform": "forum", "width": 2560, "height": 1440, "question": "open the menu"}
+{"id": "ssv2_web_1014", "pred": "[762, 37]", "bbox": [1753, 12, 472, 85], "platform": "forum", "width": 2560, "height": 1440, "question": "subscribe the website"}
+{"id": "ssv2_web_1015", "pred": "[562, 392]", "bbox": [1295, 509, 1065, 120], "platform": "forum", "width": 2560, "height": 1440, "question": "check the letters"}
+{"id": "ssv2_web_1016", "pred": "[544, 679]", "bbox": [1292, 904, 1071, 146], "platform": "forum", "width": 2560, "height": 1440, "question": "check the index"}
+{"id": "ssv2_web_1017", "pred": "[21, 42]", "bbox": [16, 21, 92, 83], "platform": "forum", "width": 2560, "height": 1440, "question": "open the menu"}
+{"id": "ssv2_web_1018", "pred": "[287, 111]", "bbox": [651, 112, 223, 86], "platform": "forum", "width": 2560, "height": 1440, "question": "check the books on culture"}
+{"id": "ssv2_web_1019", "pred": "[388, 111]", "bbox": [898, 112, 217, 88], "platform": "forum", "width": 2560, "height": 1440, "question": "check the books on true crime"}
+{"id": "ssv2_web_1020", "pred": "[746, 31]", "bbox": [1805, 0, 246, 96], "platform": "forum", "width": 2560, "height": 1440, "question": "go to book marks"}
+{"id": "ssv2_web_1021", "pred": "[21, 42]", "bbox": [16, 21, 92, 83], "platform": "forum", "width": 2560, "height": 1440, "question": "open the menu"}
+{"id": "ssv2_web_1022", "pred": "[302, 92]", "bbox": [550, 94, 454, 79], "platform": "forum", "width": 2560, "height": 1440, "question": "check the books on tv & film"}
+{"id": "ssv2_web_1023", "pred": "[199, 310]", "bbox": [435, 409, 164, 82], "platform": "forum", "width": 2560, "height": 1440, "question": "search with the current search query"}
+{"id": "ssv2_web_1024", "pred": "[100, 785]", "bbox": [193, 1084, 2252, 213], "platform": "forum", "width": 2560, "height": 1440, "question": "check the third result"}
+{"id": "ssv2_web_1025", "pred": "[301, 517]", "bbox": [201, 416, 1141, 693], "platform": "forum", "width": 2560, "height": 1440, "question": "check the shown image"}
+{"id": "ssv2_web_1026", "pred": "[886, 392]", "bbox": [2176, 528, 284, 78], "platform": "forum", "width": 2560, "height": 1440, "question": "log out my account"}
+{"id": "ssv2_web_1027", "pred": "[504, 233]", "bbox": [1262, 295, 67, 83], "platform": "forum", "width": 2560, "height": 1440, "question": "delete the entered search query"}
+{"id": "ssv2_web_1028", "pred": "[247, 145]", "bbox": [550, 172, 224, 74], "platform": "forum", "width": 2560, "height": 1440, "question": "filter with featured creteria"}
+{"id": "ssv2_web_1029", "pred": "[215, 37]", "bbox": [490, 0, 137, 111], "platform": "forum", "width": 2560, "height": 1440, "question": "check the wiki"}
+{"id": "ssv2_web_1030", "pred": "[850, 37]", "bbox": [2114, 0, 149, 112], "platform": "forum", "width": 2560, "height": 1440, "question": "log in my account"}
+{"id": "ssv2_web_1031", "pred": "[786, 316]", "bbox": [96, 372, 297, 86], "platform": "forum", "width": 2560, "height": 1440, "question": "create a new page"}
+{"id": "ssv2_web_1032", "pred": "[46, 600]", "bbox": [185, 831, 1476, 226], "platform": "forum", "width": 2560, "height": 1440, "question": "check the details of the third new"}
+{"id": "ssv2_web_1033", "pred": "[774, 884]", "bbox": [1969, 1259, 42, 36], "platform": "forum", "width": 2560, "height": 1440, "question": "close the ad banner"}
+{"id": "ssv2_web_1034", "pred": "[977, 607]", "bbox": [2467, 838, 86, 82], "platform": "forum", "width": 2560, "height": 1440, "question": "search in the website"}
+{"id": "ssv2_web_1035", "pred": "[963, 352]", "bbox": [2118, 476, 71, 59], "platform": "forum", "width": 2560, "height": 1440, "question": "log in by x account"}
+{"id": "ssv2_web_1036", "pred": "[20, 765]", "bbox": [33, 1083, 51, 48], "platform": "forum", "width": 2560, "height": 1440, "question": "share to facebook"}
+{"id": "ssv2_web_1037", "pred": "[127, 247]", "bbox": [841, 307, 235, 104], "platform": "forum", "width": 2560, "height": 1440, "question": "check the weather news"}
+{"id": "ssv2_web_1038", "pred": "[168, 893]", "bbox": [380, 1262, 131, 55], "platform": "forum", "width": 2560, "height": 1440, "question": "follow sadie gurman"}
+{"id": "ssv2_web_1039", "pred": "[939, 85]", "bbox": [2371, 93, 93, 66], "platform": "forum", "width": 2560, "height": 1440, "question": "search in the website"}
+{"id": "ssv2_web_1040", "pred": "[260, 587]", "bbox": [629, 796, 105, 104], "platform": "forum", "width": 2560, "height": 1440, "question": "pause reading the page"}
+{"id": "ssv2_web_1041", "pred": "[600, 588]", "bbox": [1499, 814, 116, 68], "platform": "forum", "width": 2560, "height": 1440, "question": "adjust reading speed"}
+{"id": "ssv2_web_1042", "pred": "[96, 193]", "bbox": [215, 216, 79, 119], "platform": "forum", "width": 2560, "height": 1440, "question": "open the menu"}
+{"id": "ssv2_web_1043", "pred": "[393, 190]", "bbox": [948, 215, 145, 120], "platform": "forum", "width": 2560, "height": 1440, "question": "check sports news"}
+{"id": "ssv2_web_1044", "pred": "[583, 363]", "bbox": [1437, 490, 153, 67], "platform": "forum", "width": 2560, "height": 1440, "question": "share the article"}
+{"id": "ssv2_web_1045", "pred": "[629, 260]", "bbox": [1541, 315, 159, 122], "platform": "forum", "width": 2560, "height": 1440, "question": "check science news"}
+{"id": "ssv2_web_1046", "pred": "[915, 170]", "bbox": [2256, 213, 194, 71], "platform": "forum", "width": 2560, "height": 1440, "question": "donate to the website"}
+{"id": "ssv2_web_1047", "pred": "[10, 105]", "bbox": [511, 122, 82, 68], "platform": "tool", "width": 2560, "height": 1440, "question": "click to search the result"}
+{"id": "ssv2_web_1048", "pred": "[981, 117]", "bbox": [2473, 127, 85, 82], "platform": "tool", "width": 2560, "height": 1440, "question": "zoom in on the map"}
+{"id": "ssv2_web_1049", "pred": "[946, 37]", "bbox": [2382, 21, 153, 71], "platform": "tool", "width": 2560, "height": 1440, "question": "sign up"}
+{"id": "ssv2_web_1050", "pred": "[981, 173]", "bbox": [2478, 209, 79, 74], "platform": "tool", "width": 2560, "height": 1440, "question": "zoom out"}
+{"id": "ssv2_web_1051", "pred": "[287, 37]", "bbox": [688, 23, 139, 66], "platform": "tool", "width": 2560, "height": 1440, "question": "export the map data"}
+{"id": "ssv2_web_1052", "pred": "[981, 545]", "bbox": [2486, 288, 71, 82], "platform": "tool", "width": 2560, "height": 1440, "question": "locate to my position"}
+{"id": "ssv2_web_1053", "pred": "[980, 405]", "bbox": [2478, 553, 79, 74], "platform": "tool", "width": 2560, "height": 1440, "question": "share the map with someone"}
+{"id": "ssv2_web_1054", "pred": "[567, 34]", "bbox": [1372, 32, 189, 46], "platform": "tool", "width": 2560, "height": 1440, "question": "check the gps traces"}
+{"id": "ssv2_web_1055", "pred": "[982, 298]", "bbox": [2475, 387, 79, 79], "platform": "tool", "width": 2560, "height": 1440, "question": "adjust map layers"}
+{"id": "ssv2_web_1056", "pred": "[100, 550]", "bbox": [303, 756, 172, 44], "platform": "tool", "width": 2560, "height": 1440, "question": "view the result of erie country"}
+{"id": "ssv2_web_1057", "pred": "[247, 178]", "bbox": [615, 234, 55, 52], "platform": "tool", "width": 2560, "height": 1440, "question": "close the search results"}
+{"id": "ssv2_web_1058", "pred": "[212, 107]", "bbox": [604, 127, 79, 68], "platform": "tool", "width": 2560, "height": 1440, "question": "click the button to navigate to boston"}
+{"id": "ssv2_web_1059", "pred": "[197, 35]", "bbox": [492, 18, 55, 71], "platform": "tool", "width": 2560, "height": 1440, "question": "view more option of edit button"}
+{"id": "ssv2_web_1060", "pred": "[819, 34]", "bbox": [2065, 23, 79, 55], "platform": "tool", "width": 2560, "height": 1440, "question": "need help"}
+{"id": "ssv2_web_1061", "pred": "[857, 372]", "bbox": [2098, 499, 418, 98], "platform": "tool", "width": 2560, "height": 1440, "question": "switch map layer to the opnvkarte"}
+{"id": "ssv2_web_1062", "pred": "[764, 593]", "bbox": [1921, 715, 87, 90], "platform": "tool", "width": 2560, "height": 1440, "question": "add a place marker on map"}
+{"id": "ssv2_web_1063", "pred": "[666, 37]", "bbox": [1650, 32, 205, 52], "platform": "tool", "width": 2560, "height": 1440, "question": "check communities"}
+{"id": "ssv2_web_1064", "pred": "[137, 297]", "bbox": [74, 403, 579, 66], "platform": "tool", "width": 2560, "height": 1440, "question": "choosing the travel mode"}
+{"id": "ssv2_web_1065", "pred": "[270, 300]", "bbox": [669, 398, 82, 74], "platform": "tool", "width": 2560, "height": 1440, "question": "click the button with \"go\""}
+{"id": "ssv2_web_1066", "pred": "[85, 355]", "bbox": [85, 488, 290, 49], "platform": "tool", "width": 2560, "height": 1440, "question": "reverse directions"}
+{"id": "ssv2_web_1067", "pred": "[100, 582]", "bbox": [33, 805, 727, 68], "platform": "tool", "width": 2560, "height": 1440, "question": "check the first listed direction"}
+{"id": "ssv2_web_1068", "pred": "[257, 40]", "bbox": [604, 21, 156, 79], "platform": "tool", "width": 2560, "height": 1440, "question": "view my map's history"}
+{"id": "ssv2_web_1069", "pred": "[903, 740]", "bbox": [2292, 1051, 36, 36], "platform": "tool", "width": 2560, "height": 1440, "question": "close the location labels on the map"}
+{"id": "ssv2_web_1070", "pred": "[114, 752]", "bbox": [25, 1048, 721, 115], "platform": "tool", "width": 2560, "height": 1440, "question": "check the direction of \"slight left onto hancock street\""}
+{"id": "ssv2_web_1071", "pred": "[144, 683]", "bbox": [301, 944, 164, 85], "platform": "tool", "width": 2560, "height": 1440, "question": "click a button to export licence"}
+{"id": "ssv2_web_1072", "pred": "[142, 278]", "bbox": [273, 359, 216, 85], "platform": "tool", "width": 2560, "height": 1440, "question": "change the area bounding numbered \"42.3768\""}
+{"id": "ssv2_web_1073", "pred": "[978, 388]", "bbox": [2470, 824, 90, 93], "platform": "tool", "width": 2560, "height": 1440, "question": "Click the button to inspect map features and view details"}
+{"id": "ssv2_web_1074", "pred": "[792, 983]", "bbox": [1984, 1403, 287, 33], "platform": "tool", "width": 2560, "height": 1440, "question": "goto openstreetmap france"}
+{"id": "ssv2_web_1075", "pred": "[50, 742]", "bbox": [107, 1053, 150, 44], "platform": "tool", "width": 2560, "height": 1440, "question": "click the \"starbucks\" located in auburn street"}
+{"id": "ssv2_web_1076", "pred": "[599, 37]", "bbox": [1456, 26, 189, 55], "platform": "tool", "width": 2560, "height": 1440, "question": "view user diaries"}
+{"id": "ssv2_web_1077", "pred": "[265, 275]", "bbox": [601, 381, 197, 38], "platform": "tool", "width": 2560, "height": 1440, "question": "register now"}
+{"id": "ssv2_web_1078", "pred": "[107, 625]", "bbox": [257, 878, 44, 46], "platform": "tool", "width": 2560, "height": 1440, "question": "select remember me"}
+{"id": "ssv2_web_1079", "pred": "[194, 683]", "bbox": [333, 971, 366, 36], "platform": "tool", "width": 2560, "height": 1440, "question": "check openstreetmap belglum"}
+{"id": "ssv2_web_1080", "pred": "[19, 893]", "bbox": [30, 652, 702, 566], "platform": "tool", "width": 2560, "height": 1440, "question": "edit note"}
+{"id": "ssv2_web_1081", "pred": "[47, 894]", "bbox": [33, 1247, 208, 90], "platform": "tool", "width": 2560, "height": 1440, "question": "add note"}
+{"id": "ssv2_web_1082", "pred": "[559, 404]", "bbox": [1418, 553, 52, 55], "platform": "tool", "width": 2560, "height": 1440, "question": "Click on the marker already added to the map"}
+{"id": "ssv2_web_1083", "pred": "[271, 196]", "bbox": [675, 220, 70, 90], "platform": "tool", "width": 2560, "height": 1440, "question": "close the note bar"}
+{"id": "ssv2_web_1084", "pred": "[922, 322]", "bbox": [2328, 433, 123, 71], "platform": "tool", "width": 2560, "height": 1440, "question": "select the html as share format"}
+{"id": "ssv2_web_1085", "pred": "[842, 500]", "bbox": [2046, 704, 415, 38], "platform": "tool", "width": 2560, "height": 1440, "question": "check geo uri link"}
+{"id": "ssv2_web_1086", "pred": "[877, 678]", "bbox": [2197, 960, 123, 44], "platform": "tool", "width": 2560, "height": 1440, "question": "select image format"}
+{"id": "ssv2_web_1087", "pred": "[216, 562]", "bbox": [391, 772, 336, 82], "platform": "tool", "width": 2560, "height": 1440, "question": "start mapping"}
+{"id": "ssv2_web_1088", "pred": "[393, 199]", "bbox": [885, 258, 260, 93], "platform": "tool", "width": 2560, "height": 1440, "question": "view the english wiki"}
+{"id": "ssv2_web_1089", "pred": "[600, 677]", "bbox": [1497, 936, 117, 82], "platform": "tool", "width": 2560, "height": 1440, "question": "select search langugage"}
+{"id": "ssv2_web_1090", "pred": "[412, 57]", "bbox": [943, 45, 672, 74], "platform": "tool", "width": 2560, "height": 1440, "question": "read wikipedia in my language"}
+{"id": "ssv2_web_1091", "pred": "[128, 600]", "bbox": [213, 827, 268, 82], "platform": "tool", "width": 2560, "height": 1440, "question": "download wikipedia app in google play store"}
+{"id": "ssv2_web_1092", "pred": "[224, 600]", "bbox": [497, 829, 238, 79], "platform": "tool", "width": 2560, "height": 1440, "question": "download in apple app store"}
+{"id": "ssv2_web_1093", "pred": "[804, 383]", "bbox": [2115, 540, 137, 33], "platform": "tool", "width": 2560, "height": 1440, "question": "look into wikidata"}
+{"id": "ssv2_web_1094", "pred": "[185, 940]", "bbox": [205, 1340, 571, 38], "platform": "tool", "width": 2560, "height": 1440, "question": "support with a donation"}
+{"id": "ssv2_web_1095", "pred": "[666, 582]", "bbox": [1653, 788, 126, 107], "platform": "tool", "width": 2560, "height": 1440, "question": "search result"}
+{"id": "ssv2_web_1096", "pred": "[662, 945]", "bbox": [1667, 1343, 137, 36], "platform": "tool", "width": 2560, "height": 1440, "question": "check wikipedia"}
+{"id": "ssv2_web_1097", "pred": "[342, 382]", "bbox": [803, 534, 150, 38], "platform": "tool", "width": 2560, "height": 1440, "question": "goto france wikipedia"}
+{"id": "ssv2_web_1098", "pred": "[442, 740]", "bbox": [831, 1023, 787, 142], "platform": "tool", "width": 2560, "height": 1440, "question": "check the searching result of machine learning"}
+{"id": "ssv2_web_1099", "pred": "[253, 82]", "bbox": [557, 75, 202, 82], "platform": "tool", "width": 2560, "height": 1440, "question": "switch to discussion"}
+{"id": "ssv2_web_1100", "pred": "[411, 726]", "bbox": [1041, 1034, 38, 36], "platform": "tool", "width": 2560, "height": 1440, "question": "look into reference [1]"}
+{"id": "ssv2_web_1101", "pred": "[144, 985]", "bbox": [350, 1400, 49, 40], "platform": "tool", "width": 2560, "height": 1440, "question": "check language setting"}
+{"id": "ssv2_web_1102", "pred": "[230, 762]", "bbox": [552, 1078, 229, 49], "platform": "tool", "width": 2560, "height": 1440, "question": "check the hyponyms of deep learning"}
+{"id": "ssv2_web_1103", "pred": "[770, 907]", "bbox": [1806, 1255, 626, 120], "platform": "tool", "width": 2560, "height": 1440, "question": "check out the month's challenges"}
+{"id": "ssv2_web_1104", "pred": "[424, 730]", "bbox": [538, 745, 1126, 634], "platform": "tool", "width": 2560, "height": 1440, "question": "click on the picture of the day"}
+{"id": "ssv2_web_1105", "pred": "[36, 568]", "bbox": [46, 805, 301, 44], "platform": "tool", "width": 2560, "height": 1440, "question": "swith language of current web page"}
+{"id": "ssv2_web_1106", "pred": "[427, 704]", "bbox": [538, 698, 1126, 634], "platform": "tool", "width": 2560, "height": 1440, "question": "play the media of the day"}
+{"id": "ssv2_web_1107", "pred": "[637, 957]", "bbox": [1617, 1359, 55, 46], "platform": "tool", "width": 2560, "height": 1440, "question": "copy url link of the media"}
+{"id": "ssv2_web_1108", "pred": "[73, 627]", "bbox": [68, 887, 249, 41], "platform": "tool", "width": 2560, "height": 1440, "question": "download current webpage to local as pdf file"}
+{"id": "ssv2_web_1109", "pred": "[628, 720]", "bbox": [1585, 1023, 180, 36], "platform": "tool", "width": 2560, "height": 1440, "question": "open wikispecies"}
+{"id": "ssv2_web_1110", "pred": "[837, 582]", "bbox": [2113, 825, 182, 39], "platform": "tool", "width": 2560, "height": 1440, "question": "open mediawiki"}
+{"id": "ssv2_web_1111", "pred": "[800, 105]", "bbox": [1940, 116, 432, 68], "platform": "tool", "width": 2560, "height": 1440, "question": "input word to search in wikidata"}
+{"id": "ssv2_web_1112", "pred": "[577, 27]", "bbox": [1464, 7, 178, 57], "platform": "tool", "width": 2560, "height": 1440, "question": "switch language of current page"}
+{"id": "ssv2_web_1113", "pred": "[683, 445]", "bbox": [1571, 425, 423, 432], "platform": "tool", "width": 2560, "height": 1440, "question": "open the picture of earth"}
+{"id": "ssv2_web_1114", "pred": "[692, 625]", "bbox": [1743, 887, 158, 41], "platform": "tool", "width": 2560, "height": 1440, "question": "open wikidata article upon earth item"}
+{"id": "ssv2_web_1115", "pred": "[333, 427]", "bbox": [505, 575, 716, 79], "platform": "tool", "width": 2560, "height": 1440, "question": "enter username to create wikidate account"}
+{"id": "ssv2_web_1116", "pred": "[883, 283]", "bbox": [2240, 392, 74, 38], "platform": "tool", "width": 2560, "height": 1440, "question": "switch page's language into chinese"}
+{"id": "ssv2_web_1117", "pred": "[432, 672]", "bbox": [530, 756, 669, 238], "platform": "tool", "width": 2560, "height": 1440, "question": "refresh captcha picture"}
+{"id": "ssv2_web_1118", "pred": "[333, 705]", "bbox": [746, 996, 235, 49], "platform": "tool", "width": 2560, "height": 1440, "question": "enter text showing in capcha"}
+{"id": "ssv2_web_1119", "pred": "[424, 792]", "bbox": [781, 1097, 869, 148], "platform": "tool", "width": 2560, "height": 1440, "question": "open page about arsene wenger"}
+{"id": "ssv2_web_1120", "pred": "[324, 257]", "bbox": [792, 346, 90, 55], "platform": "tool", "width": 2560, "height": 1440, "question": "open talk page"}
+{"id": "ssv2_web_1121", "pred": "[43, 862]", "bbox": [101, 1220, 219, 63], "platform": "tool", "width": 2560, "height": 1440, "question": "unflod items about players"}
+{"id": "ssv2_web_1122", "pred": "[767, 705]", "bbox": [1798, 747, 489, 544], "platform": "tool", "width": 2560, "height": 1440, "question": "open the logo of arsenal f.c "}
+{"id": "ssv2_web_1123", "pred": "[321, 820]", "bbox": [628, 1124, 448, 120], "platform": "tool", "width": 2560, "height": 1440, "question": "add language"}
+{"id": "ssv2_web_1124", "pred": "[700, 835]", "bbox": [1888, 1165, 342, 93], "platform": "tool", "width": 2560, "height": 1440, "question": "show cloth color for current season"}
+{"id": "ssv2_web_1125", "pred": "[733, 364]", "bbox": [1863, 504, 191, 49], "platform": "tool", "width": 2560, "height": 1440, "question": "open article about mikel arteta"}
+{"id": "ssv2_web_1126", "pred": "[692, 607]", "bbox": [1694, 753, 202, 350], "platform": "tool", "width": 2560, "height": 1440, "question": "open picture of home colours"}
+{"id": "ssv2_web_1127", "pred": "[88, 730]", "bbox": [126, 1034, 238, 41], "platform": "tool", "width": 2560, "height": 1440, "question": "click a hyperlink in main menu to show helps for how to edit wikipedia page information"}
+{"id": "ssv2_web_1128", "pred": "[856, 555]", "bbox": [2011, 507, 426, 566], "platform": "tool", "width": 2560, "height": 1440, "question": "show the picture of gloden trophy owned by ansenal"}
+{"id": "ssv2_web_1129", "pred": "[427, 919]", "bbox": [1000, 1305, 322, 46], "platform": "tool", "width": 2560, "height": 1440, "question": "enter the wikipedia page of champions league"}
+{"id": "ssv2_web_1130", "pred": "[464, 522]", "bbox": [1074, 556, 292, 407], "platform": "tool", "width": 2560, "height": 1440, "question": "open the picture of cora vitoria diehl"}
+{"id": "ssv2_web_1131", "pred": "[828, 370]", "bbox": [2123, 529, 306, 393], "platform": "tool", "width": 2560, "height": 1440, "question": "show the image of queen lili's uokalani of hawaii"}
+{"id": "ssv2_web_1132", "pred": "[66, 192]", "bbox": [202, 7, 470, 126], "platform": "tool", "width": 2560, "height": 1440, "question": "go to homepage of wikipedia"}
+{"id": "ssv2_web_1133", "pred": "[114, 637]", "bbox": [131, 758, 350, 355], "platform": "tool", "width": 2560, "height": 1440, "question": "open image of george frideric handel"}
+{"id": "ssv2_web_1134", "pred": "[478, 347]", "bbox": [1014, 480, 828, 55], "platform": "tool", "width": 2560, "height": 1440, "question": "open 'retrospect and prospect in computer-based translation' paper"}
+{"id": "ssv2_web_1135", "pred": "[49, 567, 318, 587]", "bbox": [104, 796, 57, 57], "platform": "tool", "width": 2560, "height": 1440, "question": "let website remember account information for no logging in the next year"}
+{"id": "ssv2_web_1136", "pred": "[185, 382]", "bbox": [112, 515, 719, 71], "platform": "tool", "width": 2560, "height": 1440, "question": "enter username"}
+{"id": "ssv2_web_1137", "pred": "[181, 643]", "bbox": [107, 887, 729, 79], "platform": "tool", "width": 2560, "height": 1440, "question": "log in"}
+{"id": "ssv2_web_1138", "pred": "[181, 765]", "bbox": [258, 1078, 409, 52], "platform": "tool", "width": 2560, "height": 1440, "question": "Click to recover password"}
+{"id": "ssv2_web_1139", "pred": "[782, 52]", "bbox": [1989, 53, 257, 49], "platform": "tool", "width": 2560, "height": 1440, "question": "create account"}
+{"id": "ssv2_web_1140", "pred": "[714, 800]", "bbox": [1738, 1135, 309, 44], "platform": "tool", "width": 2560, "height": 1440, "question": "open the page of bougainville island"}
+{"id": "ssv2_web_1141", "pred": "[71, 304]", "bbox": [202, 7, 486, 134], "platform": "tool", "width": 2560, "height": 1440, "question": "return the homepage of mediawiki"}
+{"id": "ssv2_web_1142", "pred": "[156, 305]", "bbox": [309, 419, 199, 46], "platform": "tool", "width": 2560, "height": 1440, "question": "switch to the discussion page"}
+{"id": "ssv2_web_1143", "pred": "[757, 577]", "bbox": [1636, 579, 801, 208], "platform": "tool", "width": 2560, "height": 1440, "question": "open the picture of the wikimedia hackathon 2023"}
+{"id": "ssv2_web_1144", "pred": "[583, 847]", "bbox": [1134, 1190, 839, 82], "platform": "tool", "width": 2560, "height": 1440, "question": "download all mediawiki last released data"}
+{"id": "ssv2_web_1145", "pred": "[668, 458]", "bbox": [1688, 632, 164, 62], "platform": "tool", "width": 2560, "height": 1440, "question": "click the flag of portugal "}
+{"id": "ssv2_web_1146", "pred": "[344, 765]", "bbox": [852, 1081, 182, 57], "platform": "tool", "width": 2560, "height": 1440, "question": "enter page of norway"}
+{"id": "ssv2_web_1147", "pred": "[624, 147]", "bbox": [1586, 193, 626, 52], "platform": "tool", "width": 2560, "height": 1440, "question": "open arsenal f.c. records and player records webpage"}
+{"id": "ssv2_web_1148", "pred": "[286, 28]", "bbox": [711, 22, 119, 39], "platform": "tool", "width": 2560, "height": 1440, "question": "open keras"}
+{"id": "ssv2_web_1149", "pred": "[697, 668]", "bbox": [1618, 948, 335, 42], "platform": "tool", "width": 2560, "height": 1440, "question": "open oracle data mining page"}
+{"id": "ssv2_web_1150", "pred": "[814, 555]", "bbox": [1859, 424, 509, 761], "platform": "tool", "width": 2560, "height": 1440, "question": "open image of book named machined learning"}
+{"id": "ssv2_web_1151", "pred": "[302, 247]", "bbox": [1036, 341, 530, 42], "platform": "tool", "width": 2560, "height": 1440, "question": "enter page of peer-reviewd scientific journal"}
+{"id": "ssv2_web_1152", "pred": "[142, 111]", "bbox": [330, 131, 104, 60], "platform": "tool", "width": 2560, "height": 1440, "question": "hide sidebar"}
+{"id": "ssv2_web_1153", "pred": "[834, 43]", "bbox": [2113, 29, 340, 62], "platform": "tool", "width": 2560, "height": 1440, "question": "change page language"}
+{"id": "ssv2_web_1154", "pred": "[600, 887]", "bbox": [1044, 1263, 514, 39], "platform": "tool", "width": 2560, "height": 1440, "question": "jump to website of 'induction of decision trees'"}
+{"id": "ssv2_web_1155", "pred": "[324, 117]", "bbox": [800, 141, 80, 52], "platform": "tool", "width": 2560, "height": 1440, "question": "switch to talk column"}
+{"id": "ssv2_web_1156", "pred": "[837, 262]", "bbox": [1888, 227, 556, 312], "platform": "tool", "width": 2560, "height": 1440, "question": "play the video shown in this page"}
+{"id": "ssv2_web_1157", "pred": "[743, 392]", "bbox": [1893, 549, 109, 36], "platform": "tool", "width": 2560, "height": 1440, "question": "go to page of darpa"}
+{"id": "ssv2_web_1158", "pred": "[44, 902]", "bbox": [42, 1239, 389, 127], "platform": "tool", "width": 2560, "height": 1440, "question": "get citation of current webpage"}
+{"id": "ssv2_web_1159", "pred": "[187, 477]", "bbox": [465, 663, 55, 55], "platform": "tool", "width": 2560, "height": 1440, "question": "delete the 'article' tag for searching"}
+{"id": "ssv2_web_1160", "pred": "[105, 342]", "bbox": [104, 463, 1501, 70], "platform": "tool", "width": 2560, "height": 1440, "question": "input keyword in the searchbar"}
+{"id": "ssv2_web_1161", "pred": "[360, 546]", "bbox": [898, 756, 52, 60], "platform": "tool", "width": 2560, "height": 1440, "question": "select to search in all area"}
+{"id": "ssv2_web_1162", "pred": "[708, 412]", "bbox": [112, 556, 1745, 75], "platform": "tool", "width": 2560, "height": 1440, "question": "show advanced searching options"}
+{"id": "ssv2_web_1163", "pred": "[182, 873]", "bbox": [428, 1234, 127, 52], "platform": "tool", "width": 2560, "height": 1440, "question": "display the next 20 searching results"}
+{"id": "ssv2_web_1164", "pred": "[431, 760]", "bbox": [1052, 1083, 119, 34], "platform": "tool", "width": 2560, "height": 1440, "question": "open page of gpt-2"}
+{"id": "ssv2_web_1165", "pred": "[740, 301]", "bbox": [2332, 414, 93, 42], "platform": "tool", "width": 2560, "height": 1440, "question": "show content of reinforcement learning"}
+{"id": "ssv2_web_1166", "pred": "[500, 662]", "bbox": [1065, 943, 470, 29], "platform": "tool", "width": 2560, "height": 1440, "question": "enter page of machine learning translation"}
+{"id": "ssv2_web_1167", "pred": "[572, 230]", "bbox": [1337, 299, 270, 73], "platform": "shop", "width": 2560, "height": 1440, "question": "open home& kitchen part"}
+{"id": "ssv2_web_1168", "pred": "[883, 844]", "bbox": [2062, 964, 452, 441], "platform": "shop", "width": 2560, "height": 1440, "question": "enter detail page of icecream"}
+{"id": "ssv2_web_1169", "pred": "[974, 192]", "bbox": [2482, 255, 42, 57], "platform": "shop", "width": 2560, "height": 1440, "question": "close the pop-up window"}
+{"id": "ssv2_web_1170", "pred": "[758, 437]", "bbox": [1914, 611, 514, 86], "platform": "shop", "width": 2560, "height": 1440, "question": "check the detailed information of the first product in the cart"}
+{"id": "ssv2_web_1171", "pred": "[688, 113]", "bbox": [1750, 144, 47, 47], "platform": "shop", "width": 2560, "height": 1440, "question": "close the alart window"}
+{"id": "ssv2_web_1172", "pred": "[400, 267]", "bbox": [976, 354, 112, 73], "platform": "shop", "width": 2560, "height": 1440, "question": "confirm leaving the shopping cart"}
+{"id": "ssv2_web_1173", "pred": "[337, 267]", "bbox": [794, 357, 166, 60], "platform": "shop", "width": 2560, "height": 1440, "question": "cancel leaving"}
+{"id": "ssv2_web_1174", "pred": "[137, 685]", "bbox": [226, 954, 267, 65], "platform": "shop", "width": 2560, "height": 1440, "question": "remove the first item from the shopping cart"}
+{"id": "ssv2_web_1175", "pred": "[617, 385]", "bbox": [1530, 505, 120, 90], "platform": "shop", "width": 2560, "height": 1440, "question": "adjust the quantity of the first item"}
+{"id": "ssv2_web_1176", "pred": "[951, 48]", "bbox": [2404, 45, 114, 57], "platform": "shop", "width": 2560, "height": 1440, "question": "sign in the website"}
+{"id": "ssv2_web_1177", "pred": "[940, 465]", "bbox": [1750, 632, 701, 91], "platform": "shop", "width": 2560, "height": 1440, "question": "show more information of the items in cart"}
+{"id": "ssv2_web_1178", "pred": "[517, 403]", "bbox": [1311, 556, 49, 52], "platform": "shop", "width": 2560, "height": 1440, "question": "view help for email account"}
+{"id": "ssv2_web_1179", "pred": "[460, 697]", "bbox": [1153, 982, 60, 47], "platform": "shop", "width": 2560, "height": 1440, "question": "add the creole seasoning to favorites"}
+{"id": "ssv2_web_1180", "pred": "[713, 717]", "bbox": [1721, 1003, 247, 70], "platform": "shop", "width": 2560, "height": 1440, "question": "add the cocowhip light to cart"}
+{"id": "ssv2_web_1181", "pred": "[632, 199]", "bbox": [1607, 260, 42, 49], "platform": "shop", "width": 2560, "height": 1440, "question": "remove the first item from the comparison"}
+{"id": "ssv2_web_1182", "pred": "[287, 780]", "bbox": [597, 1107, 338, 47], "platform": "shop", "width": 2560, "height": 1440, "question": "forget my password"}
+{"id": "ssv2_web_1183", "pred": "[576, 547]", "bbox": [1309, 749, 356, 83], "platform": "shop", "width": 2560, "height": 1440, "question": "create an account"}
+{"id": "ssv2_web_1184", "pred": "[308, 612]", "bbox": [356, 852, 891, 73], "platform": "shop", "width": 2560, "height": 1440, "question": "input my password"}
+{"id": "ssv2_web_1185", "pred": "[275, 500]", "bbox": [486, 429, 473, 743], "platform": "shop", "width": 2560, "height": 1440, "question": "check the information of the first product"}
+{"id": "ssv2_web_1186", "pred": "[208, 835]", "bbox": [844, 1309, 47, 39], "platform": "shop", "width": 2560, "height": 1440, "question": "check the price changes for the first item"}
+{"id": "ssv2_web_1187", "pred": "[880, 167]", "bbox": [2129, 211, 291, 65], "platform": "shop", "width": 2560, "height": 1440, "question": "change the sorting method"}
+{"id": "ssv2_web_1188", "pred": "[261, 167]", "bbox": [628, 198, 91, 80], "platform": "shop", "width": 2560, "height": 1440, "question": "switch the product arrangement to a 2*2 grid"}
+{"id": "ssv2_web_1189", "pred": "[528, 868]", "bbox": [1309, 1174, 91, 156], "platform": "shop", "width": 2560, "height": 1440, "question": "show next image of this item"}
+{"id": "ssv2_web_1190", "pred": "[634, 745]", "bbox": [1524, 1050, 249, 52], "platform": "shop", "width": 2560, "height": 1440, "question": "add this item to wish list"}
+{"id": "ssv2_web_1191", "pred": "[961, 54]", "bbox": [2389, 9, 164, 156], "platform": "shop", "width": 2560, "height": 1440, "question": "close the image window"}
+{"id": "ssv2_web_1192", "pred": "[112, 925]", "bbox": [203, 1234, 192, 197], "platform": "shop", "width": 2560, "height": 1440, "question": "check the second image"}
+{"id": "ssv2_web_1193", "pred": "[414, 657]", "bbox": [839, 907, 504, 80], "platform": "shop", "width": 2560, "height": 1440, "question": "check computers and accessories items "}
+{"id": "ssv2_web_1194", "pred": "[501, 27]", "bbox": [1244, 22, 112, 47], "platform": "shop", "width": 2560, "height": 1440, "question": "sign in the website"}
+{"id": "ssv2_web_1195", "pred": "[893, 127]", "bbox": [2272, 151, 80, 68], "platform": "shop", "width": 2560, "height": 1440, "question": "search the products about football"}
+{"id": "ssv2_web_1196", "pred": "[100, 745]", "bbox": [73, 837, 379, 524], "platform": "shop", "width": 2560, "height": 1440, "question": "check the information about the first item"}
+{"id": "ssv2_web_1197", "pred": "[292, 700]", "bbox": [239, 595, 1007, 841], "platform": "shop", "width": 2560, "height": 1440, "question": "view the product photo"}
+{"id": "ssv2_web_1198", "pred": "[609, 523]", "bbox": [1524, 699, 109, 114], "platform": "shop", "width": 2560, "height": 1440, "question": "change the purchase quantity of the product"}
+{"id": "ssv2_web_1199", "pred": "[737, 641]", "bbox": [1784, 899, 247, 52], "platform": "shop", "width": 2560, "height": 1440, "question": "add this item to compare"}
+{"id": "ssv2_web_1200", "pred": "[242, 290]", "bbox": [615, 395, 31, 55], "platform": "shop", "width": 2560, "height": 1440, "question": "rate this product with four stars"}
+{"id": "ssv2_web_1201", "pred": "[299, 612]", "bbox": [369, 793, 813, 190], "platform": "shop", "width": 2560, "height": 1440, "question": "provide a review for the current product"}
+{"id": "ssv2_web_1202", "pred": "[198, 770]", "bbox": [369, 1081, 296, 70], "platform": "shop", "width": 2560, "height": 1440, "question": "submit my review"}
+{"id": "ssv2_web_1203", "pred": "[17, 819]", "bbox": [36, 1159, 361, 47], "platform": "shop", "width": 2560, "height": 1440, "question": "check the privacy and cookie policy"}
+{"id": "ssv2_web_1204", "pred": "[936, 827]", "bbox": [2295, 1164, 213, 65], "platform": "shop", "width": 2560, "height": 1440, "question": "subscribe to feedback on this item"}
+{"id": "ssv2_web_1205", "pred": "[514, 32]", "bbox": [1288, 14, 80, 73], "platform": "shop", "width": 2560, "height": 1440, "question": "go to the next page"}
+{"id": "ssv2_web_1206", "pred": "[482, 34]", "bbox": [1223, 40, 23, 29], "platform": "shop", "width": 2560, "height": 1440, "question": "go to the second page"}
+{"id": "ssv2_web_1207", "pred": "[53, 787]", "bbox": [42, 1102, 197, 70], "platform": "shop", "width": 2560, "height": 1440, "question": "view the details of the item"}
+{"id": "ssv2_web_1208", "pred": "[683, 730]", "bbox": [1211, 685, 215, 230], "platform": "shop", "width": 1920, "height": 1080, "question": "View more details about the sword and shield item"}
+{"id": "ssv2_web_1209", "pred": "[289, 957]", "bbox": [524, 1029, 92, 18], "platform": "shop", "width": 1920, "height": 1080, "question": " check privacy policy"}
+{"id": "ssv2_web_1210", "pred": "[628, 375]", "bbox": [1162, 290, 376, 158], "platform": "shop", "width": 1920, "height": 1080, "question": "view more details about rental cars"}
+{"id": "ssv2_web_1211", "pred": "[857, 31]", "bbox": [1602, 10, 147, 50], "platform": "shop", "width": 1920, "height": 1080, "question": "sign up "}
+{"id": "ssv2_web_1212", "pred": "[741, 555]", "bbox": [1402, 593, 59, 28], "platform": "shop", "width": 1920, "height": 1080, "question": "star the awesome-huggingface project"}
+{"id": "ssv2_web_1213", "pred": "[895, 48]", "bbox": [1702, 30, 57, 51], "platform": "shop", "width": 1920, "height": 1080, "question": "search in this page"}
+{"id": "ssv2_web_1214", "pred": "[246, 141]", "bbox": [449, 144, 92, 28], "platform": "shop", "width": 1920, "height": 1080, "question": "Switch the language that needs to be translated to Chinese"}
+{"id": "ssv2_web_1215", "pred": "[214, 542]", "bbox": [355, 563, 140, 50], "platform": "shop", "width": 1920, "height": 1080, "question": "check the free trial"}
+{"id": "ssv2_web_1216", "pred": "[357, 607]", "bbox": [627, 644, 142, 40], "platform": "shop", "width": 1920, "height": 1080, "question": "add wikipedia to wishlist"}
+{"id": "ssv2_web_1217", "pred": "[543, 573]", "bbox": [1044, 598, 245, 56], "platform": "shop", "width": 1920, "height": 1080, "question": "Click the current date"}
+{"id": "ssv2_web_1218", "pred": "[310, 230]", "bbox": [562, 224, 799, 52], "platform": "shop", "width": 1920, "height": 1080, "question": "search in this documentation"}
+{"id": "ssv2_web_1219", "pred": "[588, 515]", "bbox": [964, 473, 337, 186], "platform": "shop", "width": 1920, "height": 1080, "question": "switch the payment option to upgrade program"}
+{"id": "ssv2_web_1220", "pred": "[764, 40]", "bbox": [1460, 29, 76, 33], "platform": "shop", "width": 1920, "height": 1080, "question": "Change the temperature display unit to Celsius"}
+{"id": "ssv2_web_1221", "pred": "[246, 946]", "bbox": [450, 1015, 150, 22], "platform": "shop", "width": 1920, "height": 1080, "question": "view drama books"}
+{"id": "ssv2_web_1222", "pred": "[907, 935]", "bbox": [1724, 992, 52, 47], "platform": "shop", "width": 1920, "height": 1080, "question": "Switch the map to 3D display mode"}
+{"id": "ssv2_web_1223", "pred": "[907, 22]", "bbox": [1712, 10, 144, 40], "platform": "shop", "width": 1920, "height": 1080, "question": "log in"}
+{"id": "ssv2_web_1224", "pred": "[637, 14]", "bbox": [1187, 4, 118, 30], "platform": "shop", "width": 1920, "height": 1080, "question": "install a steam desktop application"}
+{"id": "ssv2_web_1225", "pred": "[383, 625]", "bbox": [699, 665, 106, 27], "platform": "shop", "width": 1920, "height": 1080, "question": "Change the webpage language to French"}
+{"id": "ssv2_web_1226", "pred": "[492, 148]", "bbox": [811, 78, 300, 238], "platform": "shop", "width": 1920, "height": 1080, "question": "check more details about Nintendo Switch 2"}
+{"id": "ssv2_web_1227", "pred": "[804, 457]", "bbox": [1467, 480, 211, 34], "platform": "shop", "width": 1920, "height": 1080, "question": "Adjust the quantity of the product"}
+{"id": "ssv2_web_1228", "pred": "[485, 83]", "bbox": [900, 73, 78, 38], "platform": "shop", "width": 1920, "height": 1080, "question": "view more information about the airpods item"}
+{"id": "ssv2_web_1229", "pred": "[651, 466]", "bbox": [1219, 492, 121, 34], "platform": "shop", "width": 1920, "height": 1080, "question": "learn more about earn degree credit"}
+{"id": "ssv2_web_1230", "pred": "[530, 575]", "bbox": [953, 607, 154, 36], "platform": "shop", "width": 1920, "height": 1080, "question": "Change the payment currency"}
+{"id": "ssv2_web_1231", "pred": "[247, 440]", "bbox": [335, 452, 285, 59], "platform": "shop", "width": 1920, "height": 1080, "question": "Purchase the latest battlegroud season pass"}
+{"id": "ssv2_web_1232", "pred": "[474, 35]", "bbox": [869, 9, 95, 51], "platform": "shop", "width": 1920, "height": 1080, "question": "check the blog"}
+{"id": "ssv2_web_1233", "pred": "[411, 298]", "bbox": [784, 313, 27, 24], "platform": "shop", "width": 1920, "height": 1080, "question": "switch off \"keep me logged in\" setting"}
+{"id": "ssv2_web_1234", "pred": "[414, 637]", "bbox": [653, 670, 347, 49], "platform": "shop", "width": 1920, "height": 1080, "question": "choose downloading docker in mac-apple silicon"}
+{"id": "ssv2_web_1235", "pred": "[293, 568]", "bbox": [538, 604, 65, 28], "platform": "shop", "width": 1920, "height": 1080, "question": "Click to mark Anna's comment as unhelpful"}
+{"id": "ssv2_web_1236", "pred": "[576, 551]", "bbox": [1099, 587, 24, 27], "platform": "shop", "width": 1920, "height": 1080, "question": "Choose to sort from oldest to newest"}
+{"id": "ssv2_web_1237", "pred": "[737, 97]", "bbox": [1382, 79, 76, 53], "platform": "shop", "width": 1920, "height": 1080, "question": "Modify the display font size"}
+{"id": "ssv2_web_1238", "pred": "[404, 530]", "bbox": [757, 555, 205, 40], "platform": "shop", "width": 1920, "height": 1080, "question": "Choose to download PyTorch for Mac system"}
+{"id": "ssv2_web_1239", "pred": "[302, 740]", "bbox": [563, 786, 138, 36], "platform": "shop", "width": 1920, "height": 1080, "question": "Upvote Tillman's post"}
+{"id": "ssv2_web_1240", "pred": "[752, 875]", "bbox": [1431, 893, 44, 112], "platform": "shop", "width": 1920, "height": 1080, "question": "View the next page of the browse by category section"}
+{"id": "ssv2_web_1241", "pred": "[120, 714]", "bbox": [216, 757, 46, 40], "platform": "shop", "width": 1920, "height": 1080, "question": "adjust the volume of the currently playing video"}
+{"id": "ssv2_web_1242", "pred": "[773, 151]", "bbox": [1369, 82, 250, 230], "platform": "shop", "width": 1920, "height": 1080, "question": "check whatsapp business"}
+{"id": "ssv2_web_1243", "pred": "[980, 963]", "bbox": [1858, 1027, 60, 39], "platform": "shop", "width": 1920, "height": 1080, "question": "click to close the privacy information bar"}
+{"id": "ssv2_web_1244", "pred": "[457, 123]", "bbox": [814, 118, 158, 36], "platform": "shop", "width": 1920, "height": 1080, "question": "stop seeing the ads"}
+{"id": "ssv2_web_1245", "pred": "[88, 774]", "bbox": [162, 828, 118, 27], "platform": "shop", "width": 1920, "height": 1080, "question": "view more replies from user 'offialwildcardadventures' reply"}
+{"id": "ssv2_web_1246", "pred": "[846, 700]", "bbox": [1472, 723, 329, 83], "platform": "shop", "width": 1920, "height": 1080, "question": "choose the 1Tb storage"}
+{"id": "ssv2_web_1247", "pred": "[927, 34]", "bbox": [1741, 8, 142, 72], "platform": "shop", "width": 1920, "height": 1080, "question": "view my account profile"}
+{"id": "ssv2_web_1248", "pred": "[983, 983]", "bbox": [1881, 1052, 27, 27], "platform": "shop", "width": 1920, "height": 1080, "question": "Close the pop-up window in the bottom right corner"}
+{"id": "ssv2_web_1249", "pred": "[392, 634]", "bbox": [748, 681, 59, 23], "platform": "shop", "width": 1920, "height": 1080, "question": "upvote MagicJoshByGosh's reply"}
+{"id": "ssv2_web_1250", "pred": "[557, 363]", "bbox": [968, 373, 246, 41], "platform": "shop", "width": 1920, "height": 1080, "question": "enter my own password for logging in"}
+{"id": "ssv2_web_1251", "pred": "[531, 928]", "bbox": [976, 990, 109, 34], "platform": "shop", "width": 1920, "height": 1080, "question": "add black myth to my steam cart"}
+{"id": "ssv2_web_1252", "pred": "[518, 34]", "bbox": [934, 7, 139, 72], "platform": "shop", "width": 1920, "height": 1080, "question": "view the community of minecraft"}
+{"id": "ssv2_web_1253", "pred": "[275, 796]", "bbox": [439, 556, 211, 348], "platform": "shop", "width": 1920, "height": 1080, "question": "view more videos about VALORANT"}
+{"id": "ssv2_web_1254", "pred": "[664, 887]", "bbox": [1244, 937, 251, 79], "platform": "shop", "width": 1920, "height": 1080, "question": "view more details about ResearchGate"}
+{"id": "ssv2_web_1255", "pred": "[421, 919]", "bbox": [753, 943, 320, 130], "platform": "shop", "width": 1920, "height": 1080, "question": "view classic rock's video"}
+{"id": "ssv2_web_1256", "pred": "[353, 450]", "bbox": [661, 474, 65, 33], "platform": "shop", "width": 1920, "height": 1080, "question": "View the comments on the first article about Musk on the page"}
+{"id": "ssv2_web_1257", "pred": "[542, 353]", "bbox": [937, 320, 246, 128], "platform": "shop", "width": 1920, "height": 1080, "question": "Play the video explaining the physical characteristics of Mars"}
+{"id": "ssv2_web_1258", "pred": "[792, 426]", "bbox": [1481, 448, 88, 35], "platform": "shop", "width": 1920, "height": 1080, "question": "Follow the Twitter account of 'Ask PayPal'"}
+{"id": "ssv2_web_1259", "pred": "[639, 242]", "bbox": [1194, 225, 94, 91], "platform": "shop", "width": 1920, "height": 1080, "question": "Download DuckDuckGo as a Firefox browser extension"}
+{"id": "ssv2_web_1260", "pred": "[396, 255]", "bbox": [684, 216, 174, 130], "platform": "shop", "width": 1920, "height": 1080, "question": "View the weather details for Beijing"}
+{"id": "ssv2_web_1261", "pred": "[630, 330]", "bbox": [1199, 340, 42, 34], "platform": "shop", "width": 1920, "height": 1080, "question": "Copy the HTTP download link for this GitHub project"}
+{"id": "ssv2_web_1262", "pred": "[920, 38]", "bbox": [1752, 29, 46, 33], "platform": "shop", "width": 1920, "height": 1080, "question": "View my shopping cart"}
+{"id": "ssv2_web_1263", "pred": "[542, 407]", "bbox": [974, 422, 146, 45], "platform": "shop", "width": 1920, "height": 1080, "question": "Reject all privacy terms"}
+{"id": "ssv2_web_1264", "pred": "[605, 577]", "bbox": [1072, 597, 192, 60], "platform": "shop", "width": 1920, "height": 1080, "question": "Click to send the verification code to the specified email address"}
+{"id": "ssv2_web_1265", "pred": "[824, 630]", "bbox": [1526, 628, 156, 140], "platform": "shop", "width": 1920, "height": 1080, "question": "check shoes under 50 dollars in \"shop deals in fashion\" part"}
+{"id": "ssv2_web_1266", "pred": "[502, 615]", "bbox": [871, 579, 203, 193], "platform": "shop", "width": 1920, "height": 1080, "question": "check the book named Ms. Rachel"}
+{"id": "ssv2_web_1267", "pred": "[356, 473]", "bbox": [589, 486, 195, 55], "platform": "shop", "width": 1920, "height": 1080, "question": "Select the time of day for the reserved vehicle to arrive"}
+{"id": "ssv2_web_1268", "pred": "[383, 447]", "bbox": [681, 445, 117, 99], "platform": "shop", "width": 1920, "height": 1080, "question": "Replay the current video"}
+{"id": "ssv2_web_1269", "pred": "[550, 99]", "bbox": [1026, 91, 79, 39], "platform": "shop", "width": 1920, "height": 1080, "question": "donate to python project"}
+{"id": "ssv2_web_1270", "pred": "[117, 627]", "bbox": [211, 668, 33, 21], "platform": "shop", "width": 1920, "height": 1080, "question": "Check the Mega products in the brand selection"}
+{"id": "ssv2_web_1271", "pred": "[226, 380]", "bbox": [366, 391, 156, 51], "platform": "shop", "width": 1920, "height": 1080, "question": "register now for pytorch"}

@@ -1,0 +1,60 @@
+run_name: webgap
+device: cuda
+model:
+  name_or_path: /data/WebGAP/checkpoints/Qwen3-VL-8B-Instruct
+  torch_dtype: bfloat16
+  attn_implementation: sdpa
+  max_pixels: 802816
+  min_pixels: 200704
+  freeze_vision: true
+  freeze_llm: true
+plugin:
+  bottleneck: 768
+  num_heads: 8
+  max_anchors: 48
+  insert_every: 2
+  use_gaca: true
+  use_trb: true
+  use_erpr: true
+  erpr_tau: 0.65
+  erpr_lambda: 0.05
+  rec_lambda: 0.2
+  con_lambda: 0.1
+  gate_init: 0.0
+  share_across_layers: true
+  random_anchor_perm: false
+  anchor_mode: visual
+  gate_bias_init: 2.0
+  compute_ssl: false
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+train:
+  output_dir: /data/WebGAP/outputs/runs
+  stage: sft
+  num_epochs: 2
+  micro_batch_size: 1
+  grad_accum: 8
+  lr_plugin: 1.0e-4
+  lr_lora: 2.0e-4
+  warmup_ratio: 0.03
+  max_seq_len: 3072
+  seed: 42
+  gradient_checkpointing: true
+  baseline: webgap
+data:
+  webforge_dir: /data/WebGAP/data/webforge
+  train_pages: 10000
+  diag_pages: 2000
+  sft_samples: 3000
+  ssl_pages: 8000
+  websrc_samples: 1500
+  include_adversarial: true
+  hard_pages: 800
+  medium_pages: 400
+  long_pages: 80
+  mix_splits: ""
+eval:
+  greedy: true
+  max_samples: -1

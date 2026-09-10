@@ -1,0 +1,13 @@
+{
+  "id": "websrc_official",
+  "hf": "X-LANCE/WebSRC_v1.0",
+  "license": "cc-by-4.0",
+  "source": "https://huggingface.co/datasets/X-LANCE/WebSRC_v1.0",
+  "paper": "https://aclanthology.org/2021.emnlp-main.343",
+  "planned_download_gb": 0.649,
+  "target": "data/benchmarks/websrc_official/",
+  "eval_split": "dev",
+  "eval_note": "Full official dump is downloaded. Generation eval uses a documented page-stratified DEV subset (2 QA/page, seed 42), labeled subset evaluation — not the hidden test leaderboard.",
+  "metrics": ["EM", "F1", "POS"],
+  "abort_if_actual_gt_multiplier": 2
+}

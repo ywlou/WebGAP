@@ -1,0 +1,224 @@
+# 公开网页基准调研（评测空间 P0）
+
+本文是下一阶段的 **P0：Benchmark Survey**。成文时**没有下载新数据、没有训练**；P1 下载与后续进度见仓库根目录 [交接文档.md](../交接文档.md)。
+
+目标不是再找一套「更难的短答 QA」把 100% 压到 80%。目标是：在 **WWW / Graph Algorithms and Modeling for the Web** 的品味下，把论文的评测空间从「合成页短答 EM」改成能够回答三个问题的统一实验：
+
+1. **RQ1** 现代 MLLM 是否真的理解网页结构？
+2. **RQ2** 视觉几何与 DOM 结构冲突时，模型依赖哪一边？
+3. **RQ3** WebGAP（注意力内图注入）是否比 LoRA / GraphToken 更有效、更可控地使用结构信息？
+
+约束：单卡 A800 80GB；`/data` 空闲约 **237GB**；新增数据 **≤250GB**；只使用别人已经发布的公开基准；不允许为了降分而改标签、剔容易题、或自建一套冒充公开榜。合成数据（WebForge / WebClash）保留，但只做**受控干预与机制分析**，不再当论文主表。
+
+与仓库里旧的 `scripts/run_p0.py`（双序锚点翻盘实验）不是同一件事。后者已经跑完，结果保留；本文是**评测空间**的 P0。
+
+机器可读副本：`outputs/benchmark_survey/catalog.json`。后续下载计划：[NEXT_EXPERIMENTS.md](NEXT_EXPERIMENTS.md)。
+
+---
+
+## 1. 筛选原则（先于下载）
+
+按这个顺序筛，不按「体积越大越像主实验」筛：
+
+| 优先级 | 要求 |
+| --- | --- |
+| 必须 | 公开、可合法下载、有社区协议或论文协议 |
+| 必须 | 有网页截图，或截图+HTML/DOM 成对 |
+| 高 | 任务本身是 grounding / DOM 元素选择 / 结构阅读，而不是开放 caption 的短答 EM |
+| 高 | 能服务 RQ2：视觉序 vs 文档序，或至少能提供「同一页上的像素与 DOM」 |
+| 中 | 有官方 OOD / cross-site / unseen website 分割 |
+| 低 | 完整 web agent 环境（多步、Docker、在线站点） |
+
+**明确不做：** 为了让分数落在 60–95 而改评测脚本、随机抽难题、污染标签。分数落点只能来自**别人已经定义的任务与指标**。
+
+**明确降级：** 短答 EM 打在 caption / 坐标 grounding / 多步智能体上——这是当前 VisualWebBench 平均 18% 的原因，不是任务本身都很难。
+
+---
+
+## 2. 总表
+
+下载大小为 Hugging Face / 官方卡上的 **Total file size 或 download_size**（约数）。「适合 WebGAP」指：截图+结构信号能否接入 STAR/GACA/TRB，以及能否服务三个 RQ。饱和判断综合本仓库已跑数字与文献报告。
+
+| Benchmark | 任务 | 截图 | 网页结构 | HTML/DOM | 规模 | 下载 | License | 适合 WebGAP | 饱和风险 | P1 决策 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| VisualWebBench | 7 类网页理解+grounding | 是 | 布局/元素，无 DOM | 无 | 1.5k / 139 站 | **1.18GB** | Apache-2.0 | **高**（须官方分任务指标） | 官方均分 GPT-4V **64.6**；本仓库短答 EM 把 caption/grounding 打成 0 | **下载全量** |
+| WebSRC 官方 `X-LANCE/WebSRC_v1.0` | 结构阅读；EM/F1/**POS** | 是 | 是 | **HTML+bbox** | 6.4k 页 / 400k QA | **649MB** | 学术研究（官网发布） | **高**（DOM 图 + POS） | 本仓库截图 EM **92%**；POS 才是结构指标 | **下载官方包** |
+| WebSRC `rootsautomation/websrc` | 同上，仅图 | 是 | 弱 | 无 | 抽样 800 | 已有 63MB | 跟随原数据 | 仅作旧实验连续性 | EM 已饱和 | 保留，不扩 |
+| Multimodal-Mind2Web | 逐步元素选择+操作 | 是 | 强 | **raw/cleaned HTML** | 14.2k 步；test 三分割 | 下载 **~4.0GB**（全量加载约 22GB） | OpenRAIL；原 Mind2Web CC-BY-4.0 | **最高**（真实 DOM grounding + cross-site） | 文献逐步成功率常 20–50% | **先下三个 test split** |
+| Mind2Web Raw Dump | 轨迹/HAR/MHTML | 是 | 强 | MHTML | 全轨迹 | **~300GB** | CC-BY-4.0 | 被 MM 版替代 | — | **不下** |
+| ScreenSpot-v2 | GUI 点选 grounding | 是 | 视觉元素框 | 无 | 1272（Web **436**） | **1.33GB** | 跟随 OS-Atlas 发布 | **高**（Web 子集 + 点是否在框内） | 通用 7B 常 70–90；未 GUI 精调的 MLLM 更低 | **下载；主报 Web 子集** |
+| ScreenSpot-Pro | 专业软件高分 grounding | 是 | 桌面 GUI | 无 | 1581 | 3.38GB | 研究发布 | 低（不是网页） | 7B 常 20–40 | 不下 |
+| GUIAct web-single **test** | 单步网页动作 | 是 | 元素动作 | 弱 | 1410 | **~0.6GB** | CC-BY-4.0 | 中高（真实网页动作 grounding） | 中 | **下载 test** |
+| Design2Code | 截图→HTML | 是 | 布局 | HTML | 484 | **105MB** | 研究 / ODC-By（C4） | 中（布局忠实度，非 QA） | 生成任务，不饱和 | 可选附录 |
+| OmniACT | 桌面+网页 PyAutoGUI | 是 | bbox | 基本无 DOM | 9.8k | 418MB | 论文发布 | 低（3:1 桌面，偏代码生成） | — | 不下（与 ScreenSpot 重叠） |
+| WebLINX compact | 对话导航文本 | 基本无图 | 有 DOM 字段需 full | 需 full | 80k 行文本 | **526MB** | **CC-BY-NC-SA-4.0** | 无截图则不适合视觉插件 | — | 不下 |
+| WebLINX-full | 多轮+截图+DOM | 是 | 强 | 是 | 演示全集 | **318GB** | 同上 | 超预算 | — | **不下** |
+| WebArena 原版 Docker | 多步交互 | 运行时 | 强 | 运行时 DOM | 812 任务 | Shopping 117GB + Reddit 107GB + GitLab 155GB… | 研究 | 环境过重，且是 agent SR 不是结构归因 | SR 常很低 | **不下** |
+| VisualWebArena | 视觉 grounding 导航 | 运行时 | 强 | 运行时 | 910 任务 | 同类 Docker，文档建议 TB 级盘 | 研究 | 同上 | GPT-4V 仍难 | **不下** |
+| WebArena-Verified slim | 同上，瘦镜像 | 运行时 | 强 | 运行时 | 812 / Hard 258 | Shopping slim 17.8GB 等，合计仍数十 GB | 研究 | 可做 agent，偏题 | — | P1 不下；P9 以后再评估 |
+| AssistantBench | 开放网上多步 | 在线 | 弱 | 在线 | 214 任务 | 任务 JSON 很小 | 研究 | 无离线截图+DOM | 隐藏测试集 | 不下 |
+| WebVoyager | 15 个真实网站 agent | 在线 | 运行时 | 运行时 | ~643 | 无离线包 | 研究 | 不可复现离线 | — | 不下 |
+| SeeClick 训练集 | web grounding 训练 | 是 | bbox | 无 | 271k | **130GB** | 跟随 SeeClick | 训练用，评测已被 ScreenSpot 覆盖 | — | **不下** |
+| WebSight v0.1 / v0.2 | 合成 HTML+截图 | 是 | 合成 DOM | HTML | 82万 / 192万 | 31GB / **145GB** | CC-BY-4.0 | 训练级合成，和 WebForge 同质 | — | 不下 |
+| WebUI（组件库截图） | 截图+HTML+全元素框 | 是 | 强 | HTML/CSS/JS | 1.2万 UI ×3 视口 | 5.81GB | 混许可证 | 有框但无社区评测协议 | 未知 | P1 不下 |
+| Web2Code 评测 | 截图理解 / 生成代码 | 是 | 弱 | 部分 | 1198 图 | 较小 | 研究 | 偏 code 生成 | yes/no 可能易 | 不下 |
+| CompWebQ / SWDE | 文本/抽取 | 无 | HTML 文本 | 有 | 大 | 中 | 各异 | 无截图，STAR 无几何 | — | 不下 |
+| WebQA (CVPR 2022) | 维基多跳 QA | 配图非网页 | 否 | 否 | 大 | 原图约 51GB | 研究 | **不是网页结构集** | — | 已排除 |
+| DocVQA / InfographicVQA / ChartQA | 文档/信息图 | 是 | 非 DOM | 无 | 中 | 数 GB | 各异 | 不是 WWW 网页图 | 8B 常 60–85 | 不下 |
+
+本仓库已有：`data/benchmarks/visualwebbench` **101MB / 526 条**（每任务最多 80 条）；`data/benchmarks/websrc` **63MB / 800 条截图、评 300**，无 HTML。
+
+---
+
+## 3. 分家族说明
+
+### 3.1 VisualWebBench（视觉网页理解，Tier A）
+
+- 来源：`visualwebbench/VisualWebBench`，论文 arXiv:2404.05955。
+- 任务（官方）：caption、webqa、heading OCR、element OCR、element grounding、action prediction、action grounding。截图统一宽 1280。
+- **官方指标不是统一短答 EM。** Grounding 是八选一（随机 12.5%）；caption 用自己的打分；OCR 才接近字符串匹配。GPT-4V 均分 **64.6**，Claude Sonnet **65.8**，开源当年最好 LLaVA-1.6-34B **50.5**。Qwen2-VL 后续复现均分约 52.8（EDGE 文转引）。
+- 本仓库现状：把七类全塞进短答 EM → 冻结 18.3%；拆开后 **webqa 62.5%**，heading OCR 10.9%，element/caption/grounding **0%**。18% 是指标错配。
+- HTML：无。STAR 只能空间网格；不能声称 DOM TRB 在此集生效。
+- **适合 RQ1**（真实网页上 MLLM 细粒度能力），不单独回答 RQ2。
+- P1：下全量 1.5k，按官方七类分别计分。已有 526 条可先重打分，但论文表用全量。
+
+### 3.2 WebSRC（结构阅读 + 官方 POS，Tier A）
+
+- 来源：Chen et al., EMNLP 2021；HF `X-LANCE/WebSRC_v1.0` **649MB**（HTML + 截图 + 盒）。
+- 指标：EM、F1、**Path Overlap Score（POS）**。POS 是 DOM 根到答案标签路径的 Jaccard；专门对付「抄对了字、点错了节点」。
+- 本仓库 `rootsautomation/websrc` 只有图，EM 92%。答案以 1 词为主，8B OCR 极易满分。**再下 40 万条训练 QA 不会把 EM 变成 70%。**
+- 价值不在把 EM 做低，而在：**第一次有真实 HTML 喂给 STAR/TRB**，并报告官方 POS。若 POS 仍饱和，WebSRC 进附录，不进主排序表——这是实验结果，不是现在改标签。
+- P1：下官方 649MB；评测用官方 **dev**（完整协议），可与旧 300 条截图 EM 对照写入附录。不要把 400k train 当评测。
+
+### 3.3 Mind2Web / Multimodal-Mind2Web（DOM grounding + OOD，Tier A/B）
+
+- 原 Mind2Web：137 站、31 域、逐步 CLICK/TYPE/SELECT；分割 **Cross-Task / Cross-Website / Cross-Domain**。指标：Element Accuracy、Operation F1、Step SR、Task SR。
+- 原始 dump ~300GB。`osunlp/Multimodal-Mind2Web` 把每步 HTML 与截图对齐，下载 **4.01GB**，避免 300GB。
+- 这是目前最贴 RQ2/RQ3 的**公开**集：同一时刻既有像素又有 DOM，目标是**点到哪个节点**，不是抄一段可见文字。Cross-Website / Cross-Domain 直接提供 WWW 在乎的站点泛化。
+- 协议必须用官方逐步元素选择，**不要改成短答 QA**。无 HTML 的 4×4 网格在这里没有资格叫 DOM grounding。
+- 天花板：逐步成功率文献里远低于 100%；元素准确率才是分方法的尺子。
+- P1：优先 `test_website`、`test_task`、`test_domain`。Train 7.8k 步仅当后续要做 in-domain SFT 再下。加载后磁盘按 ~10–14GB 预留。
+- License：OpenRAIL + 原数据 CC-BY-4.0。学术复现可接受。
+
+### 3.4 WebLINX（多轮、截图+DOM，但体积与许可）
+
+- Compact 526MB 是对话 CSV，**不够做视觉插件评测**。Full **318GB** 超 250GB。CC-BY-NC-SA 对 WWW 投稿通常可接受，但磁盘不允许。
+- 决策：P1 **不下**。OOD 由 Mind2Web 的 cross-site 承担。
+
+### 3.5 WebArena / VisualWebArena / AssistantBench / WebVoyager
+
+- 真正的 web interaction。原版 Docker 单站点就 100GB+；slim 仍数十 GB，且评测是多步成功率，不是结构归因。
+- VisualWebArena 强调必须看图才能做，和 VisualWebBench 互补，但工程是完整浏览器环境，不是离线 jsonl。
+- AssistantBench / WebVoyager 依赖开放互联网，离线不可复现。
+- 决策：P1 不下。若以后磁盘与时间允许，只考虑 **WebArena-Verified Hard 258 + slim 镜像** 作为「交互 sanity check」，**不进主表**，并明确写 subset。不把 agent SR 包装成结构理解 SOTA。
+
+### 3.6 ScreenSpot-v2 与 GUIAct（grounding，Tier A）
+
+- **ScreenSpot-v2**（`OS-Copilot/ScreenSpot-v2`，1.33GB）：原 ScreenSpot 修了约 11% 错标。Web / Desktop / Mobile = 436 / 334 / 502。指标：预测点是否落在 GT 框内。
+- 通用 7B（Qwen2.5-VL）整体可到 ~89%；**未做 GUI 精调的通用 MLLM 会低一截**。主报 **Web 436**，Desktop/Mobile 只作对照，避免把 Photoshop 点选写进 WWW 网页论文。
+- **GUIAct web-single test**（~1410，约 0.6GB，CC-BY-4.0）：真实网页单步 click/type。与 ScreenSpot-v2 Web 同类但来源不同，可作第二套视觉 grounding。
+- ScreenSpot-Pro、SeeClick 130GB 训练、AITW/Android：偏桌面或手机，P1 不下。
+
+### 3.7 其它（记录后放弃）
+
+WebSight / WebUI / Design2Code / OmniACT / Web2Code / DocVQA 族：要么是合成训练数据（与 WebForge 重复），要么没有社区网页结构协议，要么不是网页。Design2Code 只有 105MB，若以后要展示「截图↔标记」可附录，**不进入 P1 必下清单**。
+
+---
+
+## 4. 当前仓库分数为什么高（以及换公开集能解决什么）
+
+| 现用分割 | 现象 | 原因 | 下一阶段位置 |
+| --- | --- | --- | --- |
+| WebForge held-out / leakage | LoRA=WebGAP=100% | 大字 OCR + 短答 EM | **附录** |
+| medium_struct | 89–98% | 冲突太弱 | 附录 / 光谱中的「轻冲突」 |
+| WebSRC 300 截图 EM | ~92% | 可见短 span，无 HTML | 附录；官方 POS 才进结构表 |
+| VisualWebBench 300 短答 EM | 18% | 指标错配 | **作废该协议**；改官方七类 |
+| hard_struct 1500 | 66–79%，GraphToken 78.7 > WebGAP 70.6 | 真有分辨率；插件未赢 | **保留为受控诊断**，不包装成 SOTA |
+| B5 随机 STAR | 100→26.6 / 70→11.7 | 机制证据 | **升级为降解曲线，必须保留** |
+| hardmix 100 step | 三者 ~99% | 监督瓶颈 | 保留为「冲突可被 SFT 学会」 |
+
+换公开集可以避免主表 100%。**不能保证 WebGAP 超过 GraphToken / LoRA / 冻结。** 现有证据方向相反。论文成功标准是三个 RQ 可回答，不是插件全榜第一。
+
+公开集几乎都**没有成对的「只改 DOM 序、截图不变」干预**。因此 RQ2 的因果部分**必须**继续用 WebForge/WebClash 做受控实验。这不是再发明一个公开榜，而是把已有合成器从主表降为干预仪器。
+
+---
+
+## 5. 锁定的评测空间（原实验 + 新基准合成一篇论文）
+
+四层，一张论文，不拆成两个项目。
+
+```text
+公开真实性          VisualWebBench 官方七类
+                    ScreenSpot-v2 Web / GUIAct web-single test
+        ↓
+公开结构            WebSRC 官方 POS + HTML
+                    Multimodal-Mind2Web 元素准确率（cross-site / cross-domain）
+        ↓
+受控冲突与干预      WebClash hard_struct 探针 + DOM/视觉重排 + 锚点降解
+                    （已有 WebForge，不新起名字冒充公开榜）
+        ↓
+机制与效率          B5 曲线、双序门控、GraphToken vs 注意力、延迟/显存
+```
+
+对应改进要求里的主表：
+
+| 论文表 | 内容 | 数据来源 |
+| --- | --- | --- |
+| Table 1 Public | VWB 官方均分 + 分任务；ScreenSpot-v2 Web；Mind2Web 元素准确率 | 别人的集 |
+| Table 2 Structural | WebSRC POS；Mind2Web element acc；hard_struct 的 visual/dom/bind/cell | 公开 + 已有受控 |
+| Table 3 Cross-model | 同一套 Table 1/2，换 MLLM 家族 | 零样本 zoo，先不接插件 |
+| Table 4 Intervention | 原页 / DOM 重排 / 视觉重排 / 冲突 / 锚点打乱 | **仅 WebForge**，诚实标注 synthetic controlled |
+
+旧数字全部保留在 `outputs/runs/` 与 [EXPERIMENTS.md](EXPERIMENTS.md)。易 held-out 100%、泄漏 100%、WebSRC EM 92%、−GACA 在易集上 100% **进附录**，不删。
+
+---
+
+## 6. P1 下载清单（尚未执行）
+
+总新增数据目标 **约 8–15GB**（远小于 250GB）。权重另计，且大模型串行存放。
+
+| 顺序 | 对象 | 约占用 | 用途 |
+| --- | --- | --- | --- |
+| 1 | VisualWebBench 全量 | 1.2GB | Table 1；官方七类指标 |
+| 2 | `X-LANCE/WebSRC_v1.0` | 0.65GB | HTML→DOM；POS |
+| 3 | Multimodal-Mind2Web 三个 test | ~4–10GB | Table 1/2；OOD |
+| 4 | ScreenSpot-v2 | 1.33GB | Table 1 grounding |
+| 5 | GUIAct web-single test | 0.6GB | 第二套网页动作 grounding |
+
+**明确留下的余量（~220GB）：** InternVL3.5-14B / Qwen3-VL-30B-A3B 等权重；检查点；Mind2Web train（仅当 data-efficiency 需要时）。
+
+**禁止在 P1 出现：** WebLINX-full、Mind2Web raw、SeeClick 130GB、WebSight、WebArena 原版 Docker、为降分而自制测试集。
+
+每下一个集之前先写 `outputs/benchmark_survey/<name>_download_plan.json`（来源、license、字节数），下载后再写 `*_metadata.json`。若实际体积与本表偏差 >2×，停止并改计划，而不是继续拉。
+
+---
+
+## 7. 模型 zoo（只调研，P0 不下权重）
+
+底座评测（改进要求：先 capability benchmark，**不要一上来给所有模型接 WebGAP**）。
+
+| Family | 模型 | 规模 | 架构要点 | 磁盘约 | A800 80GB | P3 角色 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Qwen | `Qwen/Qwen3-VL-8B-Instruct` | 8B dense | 已有；hidden 4096 | 已在仓库 ~18GB | 推理/LoRA 均舒适 | **主实验底座** |
+| Qwen | `Qwen/Qwen3-VL-30B-A3B-Instruct` | 30B MoE / 3B active | 官方 MoE | ~60GB bf16 | 推理可试；SFT 紧 | **scaling** |
+| Qwen | `Qwen/Qwen3-VL-32B-Instruct` | 32B dense | 官方 dense | ~64GB | 推理紧，需限视觉 token | P7 可选，与 30B-A3B 二选一常驻盘 |
+| InternVL | `OpenGVLab/InternVL3_5-8B-HF` | 8.5B | 动态切块 ViT | ~17GB | 舒适 | 跨家族 |
+| InternVL | `OpenGVLab/InternVL3_5-14B-HF` | 15.1B | 同上 | ~30GB | 舒适 | **跨家族主对照** |
+| InternVL | InternVL3.5-30B-A3B | 30.8B-A3B | MoE | ~62GB | 推理可试 | 资源允许再上 |
+| InternVL | InternVL3.5-38B | 38.4B | 更大 ViT | ~76GB 权重 | 配图几乎顶满 | **P3 不做** |
+| LLaVA | `lmms-lab/llava-onevision-qwen2-7b-ov` | ~8B | MLP projector | ~16GB | 舒适 | 第三架构 |
+| MiniCPM | `openbmb/MiniCPM-V-4_5` | 8.7B | 3D resampler；LLM 为 Qwen3-8B | ~18GB | 舒适 | 压缩视觉 token 的对照 |
+
+不采用「Qwen3-VL-3.8-27B」这类非官方名字。不把 Thinking 变体（如 GLM-4.1V-Thinking）放进同一 greedy 表，否则解码协议不公平。
+
+WebGAP 适配（P4 以后）：先 Qwen3-VL-8B（已有），再 InternVL3.5-14B（hidden 不同，需要**一层投影**接到共享 GACA/TRB，而不是为每个模型重写方法）。
+
+---
+
+## 8. 和 WWW 品味的对齐
+
+值得投 The Web Conference 的不是「再刷一个 QA 榜」，而是：
+
+> 网页同时存在视觉几何与 DOM 语义；二者冲突时，当前 MLLM 系统性地站在像素一边；把图写进 prompt（GraphToken）比把图写进注意力（当前 WebGAP）更能带上源序；因此需要研究**何时信 DOM、何时信视觉、如何融合**。
+
+公开集提供真实页与 DOM grounding；WebClash + B5 提供唯一能做的成对干预。两者缺一不可，且必须写在同一篇论文里。

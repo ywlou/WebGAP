@@ -1,0 +1,15 @@
+method,split,em,ci95_lo,ci95_hi,n
+zeroshot,heldout,0.906,0.878,0.932,500
+lora,heldout,1.0,1.0,1.0,500
+graphtoken,heldout,0.992,0.984,0.998,500
+webgap,heldout,1.0,1.0,1.0,500
+rand_anchor,heldout,0.266,0.226,0.304,500
+zeroshot,hard,0.695,0.65,0.7425,400
+lora,hard,0.72,0.675,0.765,400
+graphtoken,hard,0.78,0.7375,0.8225,400
+webgap,hard,0.705,0.66,0.7475,400
+rand_anchor,hard,0.105,0.075,0.1325,400
+no_gaca,hard,0.7225,0.6775,0.7675,400
+webgap,hardmix,0.9925,0.9825,1.0,400
+lora,hardmix,0.99,0.98,1.0,400
+graphtoken,hardmix,0.98,0.965,0.9925,400

@@ -1,0 +1,13 @@
+{
+  "id": "screenspot_v2",
+  "hf": "OS-Copilot/ScreenSpot-v2",
+  "license": "apache-2.0",
+  "source": "https://huggingface.co/datasets/OS-Copilot/ScreenSpot-v2",
+  "paper": "https://arxiv.org/abs/2410.23218",
+  "planned_download_gb": 1.33,
+  "n": 1272,
+  "n_web": 436,
+  "target": "data/benchmarks/screenspot_v2/",
+  "protocol": "point-in-bbox; primary report is Web subset",
+  "abort_if_actual_gt_multiplier": 2
+}

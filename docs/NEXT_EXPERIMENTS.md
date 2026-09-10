@@ -1,0 +1,198 @@
+# 下一阶段实验计划（与已有工作合成一篇论文）
+
+本文把 **已经跑完的 WebGAP 第一轮** 和 **评测空间重设计** 写成同一条线。不是第二个项目，也不作废现有检查点。下载与训练按 [BENCHMARK_SURVEY.md](BENCHMARK_SURVEY.md) 的 P1 清单执行；**本文锁定做什么、不做什么、表怎么排**。P0–P2 已完成；P3 进行中。最新停点见仓库根目录 [交接文档.md](../交接文档.md)。
+
+旧脚本 `scripts/run_p0.py` 是「双序锚点翻盘」，结果有效，下文称 **双序实验**。下文 P0–P10 是改进要求里的评测升级编号。
+
+---
+
+## 0. 一篇论文要回答什么
+
+最终声称不是「我们提出一个图注意力插件，网页 QA +1%」。
+
+> **Multimodal LLMs 在普通网页短答上已经很强，但当视觉几何与潜伏 DOM 结构不一致时，它们的结构归因是脆弱的。** 我们用公开网页基准证明这一点仍然存在；用受控干预证明模型（以及当前几何锚点插件）默认站在像素一边；用 GraphToken 对照证明「把结构写进 prompt」有时比「写进注意力」更能带上源序；然后把 WebGAP 从单路几何图升级为**冲突可感知的双结构融合**，并在公开 grounding / DOM 选择 / 受控冲突上检验它何时有用、何时失败。
+
+三个 RQ：
+
+| RQ | 主要证据 | 现有结果如何接入 |
+| --- | --- | --- |
+| RQ1 是否理解网页结构 | 公开：VWB 官方七类、ScreenSpot-v2 Web、Mind2Web 元素准确率、WebSRC POS；跨家族零样本 | 旧 VWB 短答 EM 作废协议；旧 WebSRC EM 92% 证明「抄可见字」会饱和 |
+| RQ2 冲突时信哪边 | 受控：WebClash 探针、DOM/视觉重排、锚点降解；公开：Mind2Web 上量视觉序–DOM 序不一致度再分层 | hard_struct 1500：`dom` 探针冻结/LoRA/视觉 WebGAP ≈0，GraphToken 35.4 |
+| RQ3 插件是否更有效可控 | 同输入下 Frozen / LoRA / GraphToken / WebGAP；data-efficiency；跨家族适配器；B5 因果 | B5 坍塌必须保留；**不得删除 GraphToken > WebGAP** |
+
+成功标准**不是** WebGAP 全第一。是：主表不再大量 100%；至少一块公开集能分开四种方法；至少一块结构集显示系统性弱点；至少一次干预证明用的是结构而非多出来的参数；至少两个 MLLM 家族；至少一个 cross-site；失败结果留在正文。
+
+---
+
+## 1. 评测空间（工程上一个接口，论文上四张表）
+
+统一入口（P2 实现，尚未写）：`scripts/evaluate.py`。旧的 `eval.py` / `eval_hard.py` / `eval_public.py` **保留**，新入口调它们或平行实现，不覆盖 `outputs/runs/`。
+
+任务类型（同一 runner，不同 metric）：
+
+| `task_type` | 输入 | 输出 | 指标 | 数据 |
+| --- | --- | --- | --- | --- |
+| `qa_em` | 图+问 | 短字符串 | 规范化 EM/F1 | 旧 WebForge、WebSRC 附录 |
+| `vwb_official` | 图+官方题 | 按任务 | caption / OCR / 八选一 grounding / action | VisualWebBench 全量 |
+| `point_ground` | 图+指令 | 坐标 | 点是否在 GT 框内 | ScreenSpot-v2 Web、GUIAct |
+| `dom_element` | 图+HTML+任务 | 节点 id / 操作 | Element Acc、Op F1、Step SR | Multimodal-Mind2Web |
+| `websrc_pos` | 图+HTML+问 | span + 标签路径 | EM/F1/**POS** | WebSRC 官方 |
+| `probe_em` | 合成页 | 短答 | 总体 + visual/dom/bind/cell | hard_struct |
+| `intervention` | 成对页 | 答案是否随结构翻转 | 翻转率、配对准确率 | WebForge 干预 |
+
+禁止：用 `qa_em` 去打 grounding 或 caption。
+
+---
+
+## 2. 已有工作如何写入新故事（不互斥）
+
+| 已有模块 / 结果 | 新论文中的位置 |
+| --- | --- |
+| STAR / GACA / TRB / ERPR / 仅 prefill / 零初始化 | 方法主体保留 |
+| 双序锚点 `visual \| dom \| dual` + token 门控 | 升级为 RQ2 的方法核，而不是「补丁」 |
+| GraphToken | **永久强基线**；正文解释为何显式序列化在源序上更强 |
+| B5 随机 STAR | 机制主证据；升级为正确 / 局部错 / 全局错 / 随机降解曲线 |
+| hard_struct 1500 与探针 | 受控诊断表，不包装成 superiority |
+| hardmix：LoRA 也能 99% | 写成 supervision vs architecture |
+| 易 held-out / 泄漏 / H1–H5 满分 | 附录：OCR 天花板 |
+| WebSRC 截图 EM 92% | 附录：错误协议下的饱和 |
+| VWB 短答 EM 18% | 附录：指标错配 |
+| 效率 +6.8% | 保留，补长度×batch 曲线 |
+| WebForge | 训练 + 干预发生器，**不是**公开主榜 |
+| WebClash 名字 | 仅指受控冲突协议；文档中写明 synthetic controlled，不冒充公开 benchmark |
+
+方法上允许（也应当）在现有 GACA 双流上加**冲突感知融合**（P6）：检测视觉关系与 DOM 关系是否一致，再调 `α`。这是原插件的连续，不是另起炉灶。公式不照搬改进要求的玩具加权，而落在已有 `mix` 门控与两套 `assignment_*` 上。
+
+---
+
+## 3. 阶段计划
+
+### P0 Benchmark Survey — **已完成**
+
+产物：本文、[BENCHMARK_SURVEY.md](BENCHMARK_SURVEY.md)、`outputs/benchmark_survey/catalog.json`。无下载、无训练。
+
+### P1 下载 — **已完成**
+
+五件均已落地，`outputs/benchmark_survey/*_metadata.json` 与 `p1_download_summary.json` 已写。合计约 **9GB** 评测数据（另加 HF parquet 缓存），未下 train。
+
+| 集 | n | 备注 |
+| --- | --- | --- |
+| VisualWebBench 全量 | 1536 | 官方七类；旧 526 短答 `eval.jsonl` 保留 |
+| WebSRC 官方 DEV subset | 1697 / 849 页 | `dataset_split.csv` 的 DEV 站，2 QA/页 seed 42；非 hidden test |
+| ScreenSpot-v2 | 1272（web **437**） | 主报表 web split；图已从 zip 解出 |
+| GUIAct web-single test | 1410（bbox 1089） | 官方 test；无框项评测时跳过 |
+| Multimodal-Mind2Web test | 6418（图 6407） | `test_website` 1019 / `test_task` 1339 / `test_domain` 4060；**未下 train** |
+
+**不下：** WebArena Docker、VisualWebArena、WebLINX-full、Mind2Web 300GB、SeeClick 130GB、WebSight、为降分自制榜。
+
+### P2 统一评测接口 — **已完成（可跑）**
+
+- 入口 `scripts/evaluate.py`；新结果进 `outputs/mllm_baselines/`，不覆盖 `outputs/runs/`。  
+- VisualWebBench：官方 Rouge / 八选一，不用短答 EM。  
+- ScreenSpot-v2 / GUIAct：点∈框。  
+- WebSRC：EM/F1 + span-aligned POS。  
+- Mind2Web：当前是 next-action 字符串 vs `target_action_reprs`（**不是** full task SR；正文须写明）。
+
+### P3 MLLM baseline zoo（先零样本，不接 WebGAP）
+
+同一图像、同一提示模板族、同一解码（greedy，生成长度按任务）、同一脚本。
+
+必跑：
+
+- Qwen3-VL-8B（已有）
+- InternVL3.5-8B
+- InternVL3.5-14B
+- Qwen3-VL-30B-A3B
+- LLaVA-OneVision-7B
+- MiniCPM-V-4.5
+
+Qwen3-VL-32B：若 30B-A3B 已能回答 scaling，则 32B 只抽硬诊断子集，避免两份 60GB+ 权重长期并存。InternVL3.5-38B 不做。Thinking 变体不进同一 greedy 表。
+
+要回答的问题：结构弱点是不是跨家族的。若大模型在 Mind2Web `dom`/元素选择上仍然系统性偏视觉，RQ1 成立，插件动机增强。
+
+权重可串行：评完卸盘。记录：hf id、参数量、精度、峰值显存、墙钟、prompt、生成参数。
+
+### P4 在同一评测空间重跑四种方法
+
+底座默认 Qwen3-VL-8B：Frozen / LoRA / GraphToken / WebGAP（视觉、DOM、双序检查点都评）。**输入、提示、脚本完全相同。** 旧 hard_struct 数字作为对照列保留，不手工改。
+
+### P5 结构干预（最高优先级新实验）
+
+在 WebForge 上实现成对页（截图尽量不变或只改目标轴）：
+
+| 干预 | 测什么 |
+| --- | --- |
+| DOM reorder | 源序变、视觉尽量不变 → 是否改 `dom` 答案 |
+| Visual reorder | 布局变、DOM 尽量不变 → 是否改 `visual` 答案 |
+| Cross-modal conflict | 已有 rtl / crossed_figures / swap_nav |
+| Anchor permutation curve | 正确、局部错、语义近错、全局错、均匀随机 |
+
+输出进 `outputs/intervention/`。这是 RQ2 的因果段。公开集没有成对干预，**不要假装 Mind2Web 能替代这一段**。
+
+### P6 WebGAP 消融与冲突融合
+
+消融（训练期 vs 推理期按逻辑分开，不拿推理开关冒充训练消融）：
+
+`-GACA` `-TRB` `-STAR` 随机 STAR；`visual-only` `dom-only` `dual`；再加 **dual+conflict-gate**（在现有 `mix` 上显式利用两路关系是否一致）。
+
+ERPR 已证明在短页上几乎不触发，附录即可，不再当贡献。
+
+### P7 Scaling
+
+至少：Qwen3-VL-8B vs 30B-A3B（或 32B）；InternVL3.5-8B vs 14B。问题：规模是否自动修好冲突；插件增益是否随规模消失。只做零样本 + 必要时 8B/14B 上的插件，不给 32B 做完整 SFT。
+
+### P8 Data efficiency
+
+在 `hard_train` 冲突监督上：1% / 10% / 25% / 50% / 100%，比 LoRA / GraphToken / WebGAP。希望看到的是低数据区插件更陡——**若看不到，照实写**。曲线进 `outputs/data_efficiency/`。已有 25/50/100/200/400 step 检查点可先重评，再补更小比例。
+
+### P9 OOD
+
+公开：Mind2Web `test_website` vs `test_domain`。合成：未见模板族 held-out（附录）+ 未见冲突模板。不把随机 train/test split 当成 cross-site。
+
+### P10 统计与图
+
+主公开集：3 seeds（大模型 1 seed 并声明）。WebGAP vs LoRA：题目级 paired bootstrap。图：主榜、MLLM zoo、结构表、干预、锚点曲线、scaling、data-efficiency、效率、消融。轴标签英文，说明中文。
+
+---
+
+## 4. 算力与磁盘（硬约束下的取舍）
+
+| 资源 | 用法 |
+| --- | --- |
+| A800 80GB | 8B/14B 全协议；30B-A3B/32B 以推理+短生成、限制视觉分辨率为主 |
+| 空闲 ~237GB | P1 数据 <15GB；同时常驻 8B + 14B + 一个 30B 级权重可行 |
+| 已有检查点 | 全部保留；新 run 用新名字 |
+
+若 32B bf16 + 高分辨率图 OOM：降 `max_pixels`，并在日志里写明，**不与 8B 全分辨率混成「公平失败」**。
+
+InternVL hidden ≠ 4096：P4 只做零样本；P6 跨家族用 **模型特定投影 → 共享结构适配器**，不复制一套 GACA。
+
+---
+
+## 5. 明确不做
+
+- 不为降分改 GT、剔容易题、加噪声、换恶心 prompt。  
+- 不自建第三套「公开风格」benchmark。WebClash 保持受控诊断身份。  
+- 不把 agent 环境（WebArena）在磁盘打满之前塞进主表。  
+- 不把 GraphToken 变弱或从主表拿掉。  
+- 不在所有 MLLM 上先接插件再评能力。  
+- 不写论文、不推 GitHub（除非以后明确要求）。  
+- 不覆盖 `outputs/runs/` 旧实验。
+
+---
+
+## 6. 建议的正文结构（把两轮实验捏在一起）
+
+1. 观察：普通网页 QA 已近饱和（附录：held-out 100%、WebSRC EM 92%）。  
+2. 问题：结构归因 / DOM grounding / 视觉–DOM 冲突仍难（hard_struct `dom`≈0；公开 grounding 按官方指标远不是 100%）。  
+3. 评测：公开集 + 受控干预，而不是再合成一万道短答题。  
+4. 分析：冻结 MLLM 与 LoRA 默认视觉；GraphToken 能带源序；几何 STAR 在冲突上喂错信息（B5、−GACA 略升）。  
+5. 方法：WebGAP 作为结构感知注意力，双序 + 冲突门控。  
+6. 实验：Table 1–4、干预、scaling、data-efficiency、效率。  
+7. 失败：插件在若干冲突题上仍低于 GraphToken —— 作为「注意力注入 ≠ 结构被用对」的洞察保留。
+
+---
+
+## 7. 执行顺序（下一动作）
+
+**当前进度以仓库根目录 [交接文档.md](../交接文档.md) 为准。** 第三节的 P0–P2 已完成。下一步是 **P3 收尾**：先把 Qwen3-VL-8B 的 Mind2Web 三个 test split 跑完，再串行下载其它 MLLM 做零样本，不要一上来接插件。P3 能力榜完成前不要开始新的跨模型 SFT。

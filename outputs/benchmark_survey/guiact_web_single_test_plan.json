@@ -1,0 +1,12 @@
+{
+  "id": "guiact_web_single_test",
+  "hf": "yiye2023/GUIAct",
+  "files": ["web-single_test_data.json", "web-single_test_images.parquet"],
+  "license": "CC-BY-4.0",
+  "source": "https://huggingface.co/datasets/yiye2023/GUIAct",
+  "paper": "https://arxiv.org/abs/2406.11317",
+  "planned_download_gb": 0.6,
+  "n": 1410,
+  "target": "data/benchmarks/guiact_web_single/",
+  "abort_if_actual_gt_multiplier": 2
+}
