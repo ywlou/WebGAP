@@ -1,7 +1,7 @@
 run_name: webgap
 device: cuda
 model:
-  name_or_path: /data/WebGAP/checkpoints/Qwen3-VL-8B-Instruct
+  name_or_path: /data/models/Qwen/Qwen3-VL-8B-Instruct
   torch_dtype: bfloat16
   attn_implementation: sdpa
   max_pixels: 802816
@@ -25,6 +25,7 @@ plugin:
   random_anchor_perm: false
   anchor_mode: visual
   gate_bias_init: 2.0
+  conflict_gate: false
   compute_ssl: false
 lora:
   r: 16

@@ -100,6 +100,14 @@ class WebGAPPlugin(nn.Module):
         self.mix = nn.Linear(d, 1)
         nn.init.zeros_(self.mix.weight)
         nn.init.constant_(self.mix.bias, float(cfg.gate_bias_init))
+        # P6 conflict-gate: extra logits from (token order mismatch, graph-level
+        # rank correlation). Negative init cancels visual bias when orders reverse.
+        self.cg_tok = nn.Linear(1, 1)
+        self.cg_graph = nn.Linear(1, 1)
+        nn.init.constant_(self.cg_tok.weight, -2.0)
+        nn.init.zeros_(self.cg_tok.bias)
+        nn.init.constant_(self.cg_graph.weight, -1.0)
+        nn.init.zeros_(self.cg_graph.bias)
         self.norm_c = nn.LayerNorm(d)
         self.norm_x = nn.LayerNorm(d)
         # TRB table: [num_rel, heads] then broadcast. Index 0 forced unused via mask.
@@ -184,6 +192,60 @@ class WebGAPPlugin(nn.Module):
         x2, attn = self.scatter(self.norm_x(x), c, key_mask=k_mask, need_weights=True)
         return x2, attn
 
+    def _order_conflict(
+        self,
+        vis_assign: torch.Tensor,
+        dom_assign: torch.Tensor,
+        order_ids: torch.Tensor | None,
+        order_ids_dom: torch.Tensor | None,
+        k_valid: torch.Tensor,
+        k_valid_dom: torch.Tensor,
+        visual_mask: torch.Tensor | None,
+        hidden_states: torch.Tensor,
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        """Token and graph conflict in [0, 1] from STAR assignment × order ranks.
+
+        Visual and DOM columns are different node sets, so relation matrices are
+        not aligned. Expected reading-order vs document-order rank per token is.
+        """
+        bsz, seqlen, _ = vis_assign.shape
+        zero_tok = hidden_states.new_zeros(bsz, seqlen)
+        zero_g = hidden_states.new_zeros(bsz)
+        if order_ids is None or order_ids_dom is None:
+            return zero_tok, zero_g
+        ov = order_ids.to(dtype=vis_assign.dtype)
+        od = order_ids_dom.to(dtype=dom_assign.dtype)
+        kv = vis_assign.shape[-1]
+        kd = dom_assign.shape[-1]
+        if ov.shape[-1] != kv:
+            if ov.shape[-1] > kv:
+                ov = ov[:, :kv]
+            else:
+                ov = torch.nn.functional.pad(ov, (0, kv - ov.shape[-1]))
+        if od.shape[-1] != kd:
+            if od.shape[-1] > kd:
+                od = od[:, :kd]
+            else:
+                od = torch.nn.functional.pad(od, (0, kd - od.shape[-1]))
+        exp_v = torch.einsum("bsk,bk->bs", vis_assign, ov)
+        exp_d = torch.einsum("bsk,bk->bs", dom_assign, od)
+        nv = exp_v / k_valid.to(dtype=exp_v.dtype).clamp(min=1).unsqueeze(1)
+        nd = exp_d / k_valid_dom.to(dtype=exp_d.dtype).clamp(min=1).unsqueeze(1)
+        tok = (nv - nd).abs().clamp(0, 1)
+        w = visual_mask.to(dtype=tok.dtype) if visual_mask is not None else tok.new_ones(tok.shape)
+        if w.shape[1] != seqlen:
+            w = tok.new_ones(tok.shape)
+        wsum = w.sum(dim=1, keepdim=True).clamp(min=1)
+        ma = (nv * w).sum(dim=1, keepdim=True) / wsum
+        mb = (nd * w).sum(dim=1, keepdim=True) / wsum
+        ac = (nv - ma) * w
+        bc = (nd - mb) * w
+        num = (ac * bc).sum(dim=1)
+        den = (ac.square().sum(dim=1) * bc.square().sum(dim=1)).clamp(min=1e-8).sqrt()
+        corr = (num / den).clamp(-1, 1)
+        graph = ((1.0 - corr) * 0.5).clamp(0, 1)
+        return tok, graph
+
     def forward(self, hidden_states: torch.Tensor, gb: GraphBatch) -> torch.Tensor:
         """
         hidden_states: [B, S, H]
@@ -191,7 +253,12 @@ class WebGAPPlugin(nn.Module):
         mixed by a token-wise gate. B5 permutes only the visual stream.
         """
         if not self.cfg.use_gaca:
-            self.last_aux = {"erpr": hidden_states.new_zeros(()), "rec": hidden_states.new_zeros(()), "gate": hidden_states.new_zeros(())}
+            self.last_aux = {
+                "erpr": hidden_states.new_zeros(()),
+                "rec": hidden_states.new_zeros(()),
+                "gate": hidden_states.new_zeros(()),
+                "conflict": hidden_states.new_zeros(()),
+            }
             return hidden_states
 
         mode = getattr(self.cfg, "anchor_mode", "visual") or "visual"
@@ -222,12 +289,28 @@ class WebGAPPlugin(nn.Module):
             dom_delta, dom_attn = vis_delta, vis_attn
 
         gate = x.new_ones(x.shape[0], x.shape[1], 1)
+        tok_c = x.new_zeros(x.shape[0], x.shape[1])
+        graph_c = x.new_zeros(x.shape[0])
         if mode == "dom":
             delta = dom_delta
             attn = dom_attn
             gate = gate * 0
         elif mode == "dual" and use_dom:
-            gate = torch.sigmoid(self.mix(x))
+            logit = self.mix(x)
+            if getattr(self.cfg, "conflict_gate", False):
+                tok_c, graph_c = self._order_conflict(
+                    vis_assign,
+                    dom_assign,
+                    gb.order_ids,
+                    gb.order_ids_dom,
+                    gb.k_valid,
+                    kv,
+                    gb.visual_mask,
+                    hidden_states,
+                )
+                logit = logit + self.cg_tok(tok_c.unsqueeze(-1).to(dtype=logit.dtype))
+                logit = logit + self.cg_graph(graph_c.view(-1, 1, 1).expand(-1, logit.shape[1], 1).to(dtype=logit.dtype))
+            gate = torch.sigmoid(logit)
             delta = gate * vis_delta + (1.0 - gate) * dom_delta
             attn = vis_attn
         else:
@@ -257,6 +340,7 @@ class WebGAPPlugin(nn.Module):
             "con": con,
             "entropy": (1.0 - erpr.detach()) if isinstance(erpr, torch.Tensor) else erpr,
             "gate": gate.mean() if torch.is_tensor(gate) else hidden_states.new_zeros(()),
+            "conflict": tok_c.mean() if torch.is_tensor(tok_c) else hidden_states.new_zeros(()),
         }
         return out
 

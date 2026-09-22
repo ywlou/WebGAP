@@ -1,2 +1,3 @@
 # data_efficiency
-P0 之后才写入结果。当前为空。
+
+P8：冲突页 SFT 的步数曲线 + 1%/10% 小样本。由 `scripts/run_p8.py` 写入 `points.json` / `points.csv`。

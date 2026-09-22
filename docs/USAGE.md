@@ -8,7 +8,7 @@
 - Conda 环境 `torch2.4_cuda12.1`（本机已原地升级为 **PyTorch 2.6.0+cu124**，因为 `transformers` 5.x 需要 torch ≥ 2.5）
 - `export PYTHONPATH=/data/WebGAP/src`
 - `export HF_ENDPOINT=https://hf-mirror.com`（可选；权重经 ModelScope 拉取）
-- 权重：`/data/WebGAP/checkpoints/Qwen3-VL-8B-Instruct`
+- 权重：`/data/models/Qwen/Qwen3-VL-8B-Instruct`（`WEBGAP_MODELS_DIR`，禁止放进仓库）
 
 若 CUDA OOM：在 `configs/default.yaml` 降低 `model.max_pixels`（默认 `802816`）和 `train.max_seq_len`。
 

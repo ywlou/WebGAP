@@ -135,9 +135,15 @@ class WebGAPModel(nn.Module):
 
 
 def load_qwen3vl(cfg: ExperimentConfig, device: str = "cuda"):
+    import os
+
     import torch
     from transformers import AutoProcessor, Qwen3VLForConditionalGeneration
 
+    from webgap.constants import MODELS_ROOT
+
+    os.environ.setdefault("HF_HOME", str(MODELS_ROOT))
+    os.environ.setdefault("HF_HUB_CACHE", str(MODELS_ROOT / "hub"))
     dtype = torch.bfloat16 if cfg.model.torch_dtype == "bfloat16" else torch.float16
     path = cfg.model.name_or_path
     processor = AutoProcessor.from_pretrained(path, trust_remote_code=True)

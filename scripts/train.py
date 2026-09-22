@@ -27,6 +27,7 @@ def main():
     p.add_argument("--ckpt", default=None, help="continue from adapter/plugin checkpoint")
     p.add_argument("--split", default=None, help="WebForge split folder to train on (default train)")
     p.add_argument("--anchor-mode", default=None, choices=["visual", "dom", "dual"])
+    p.add_argument("--conflict-gate", action="store_true", help="P6: explicit visual/DOM conflict feature in mix")
     p.add_argument("--replay-ratio", type=float, default=None)
     p.add_argument("--mix-splits", default=None, help="comma-separated extra splits (e.g. hard_train)")
     p.add_argument("--lr-lora", type=float, default=None)
@@ -59,6 +60,8 @@ def main():
         cfg.data.sft_split = args.split
     if args.anchor_mode:
         cfg.plugin.anchor_mode = args.anchor_mode
+    if args.conflict_gate:
+        cfg.plugin.conflict_gate = True
     if args.replay_ratio is not None:
         cfg.train.replay_ratio = args.replay_ratio
     if args.mix_splits is not None:

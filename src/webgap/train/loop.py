@@ -213,6 +213,7 @@ def train(cfg: ExperimentConfig) -> Path:
                 if use_plugin:
                     rec["erpr"] = float(model.plugin.last_aux.get("erpr", torch.tensor(0.0)).detach().float().cpu())
                     rec["gate"] = float(model.plugin.last_aux.get("gate", torch.tensor(0.0)).detach().float().cpu())
+                    rec["conflict"] = float(model.plugin.last_aux.get("conflict", torch.tensor(0.0)).detach().float().cpu())
                     rec["ssl_rec"] = float(model.plugin.last_aux.get("rec", torch.tensor(0.0)).detach().float().cpu())
                 print(rec, flush=True)
                 logs.append(rec)

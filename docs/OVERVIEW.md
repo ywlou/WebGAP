@@ -14,7 +14,7 @@
 
 | 类别 | 做了什么 |
 | --- | --- |
-| 环境 | Conda 环境、PyTorch 2.6 + CUDA 12.4、`transformers` 5.x；Qwen3-VL-8B-Instruct 权重在 `checkpoints/` |
+| 环境 | Conda 环境、PyTorch 2.6 + CUDA 12.4、`transformers` 5.x；Qwen3-VL-8B-Instruct 权重在 `/data/models/Qwen/` |
 | 数据引擎 | WebForge：PIL 合成页（非 Playwright），精确盒子 + H1–H5 短答题；训练 1 万页、留出 2 千页、泄漏模板 400 页；另做 `hard_struct` / `hard_train` |
 | 图与赋值 | DOM 父子/兄弟（按源序 `sibling_index`）、空间边、图文 CMA；STAR 用视觉 token 盒与区域 BBox 的 IoU 赋值；无 HTML 时 4×4 空间网格回退 |
 | 模型 | 冻结 8B + LoRA r=16；共享插件 GACA / 锚点级 TRB / 训练期 ERPR；只在 prefill 插入；`out_proj` 零初始化 |

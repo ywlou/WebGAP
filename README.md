@@ -50,10 +50,11 @@ docs/zh/             # 中文文档备份
 conda activate torch2.4_cuda12.1   # 本机为 torch 2.6 + CUDA 12.4（transformers 5.x 需要）
 export PYTHONPATH=/data/WebGAP/src
 export HF_ENDPOINT=https://hf-mirror.com
-# 权重：/data/WebGAP/checkpoints/Qwen3-VL-8B-Instruct
+export WEBGAP_MODELS_DIR=/data/models
+# 权重：/data/models/Qwen/Qwen3-VL-8B-Instruct（禁止放进仓库）
 ```
 
-Python 3.10，单卡 NVIDIA A800 80GB。磁盘远低于 300GB（8B 权重约 18GB，WebForge 约 3–8GB，公开评测数 GB 量级）。
+Python 3.10。底座权重一律放在 `/data/models/`，不要写入 `/data/WebGAP`。磁盘远低于 300GB（8B 权重约 18GB，WebForge 约 3–8GB，公开评测数 GB 量级）。
 
 ## 复现
 

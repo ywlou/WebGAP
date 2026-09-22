@@ -9,13 +9,15 @@ from typing import Any
 
 import yaml
 
+from webgap.constants import DEFAULT_QWEN3VL_8B
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
 
 @dataclass
 class ModelConfig:
-    name_or_path: str = str(ROOT / "checkpoints" / "Qwen3-VL-8B-Instruct")
+    name_or_path: str = str(DEFAULT_QWEN3VL_8B)
     processor_path: str | None = None
     torch_dtype: str = "bfloat16"
     attn_implementation: str = "sdpa"
@@ -46,6 +48,9 @@ class PluginConfig:
     # dual = both streams + token-wise gate (initially visual-heavy).
     anchor_mode: str = "visual"  # visual | dom | dual
     gate_bias_init: float = 2.0
+    # P6: add an explicit visual-vs-DOM order-conflict feature into mix(x).
+    # False keeps dual identical to the P0/P4 checkpoint.
+    conflict_gate: bool = False
     compute_ssl: bool = False
 
 

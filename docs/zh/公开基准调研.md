@@ -199,7 +199,7 @@ WebSight / WebUI / Design2Code / OmniACT / Web2Code / DocVQA 族：要么是合�
 
 | Family | 模型 | 规模 | 架构要点 | 磁盘约 | A800 80GB | P3 角色 |
 | --- | --- | --- | --- | --- | --- | --- |
-| Qwen | `Qwen/Qwen3-VL-8B-Instruct` | 8B dense | 已有；hidden 4096 | 已在仓库 ~18GB | 推理/LoRA 均舒适 | **主实验底座** |
+| Qwen | `Qwen/Qwen3-VL-8B-Instruct` | 8B dense | 已有；hidden 4096 | `/data/models/Qwen/` ~17GB | 推理/LoRA 均舒适 | **主实验底座** |
 | Qwen | `Qwen/Qwen3-VL-30B-A3B-Instruct` | 30B MoE / 3B active | 官方 MoE | ~60GB bf16 | 推理可试；SFT 紧 | **scaling** |
 | Qwen | `Qwen/Qwen3-VL-32B-Instruct` | 32B dense | 官方 dense | ~64GB | 推理紧，需限视觉 token | P7 可选，与 30B-A3B 二选一常驻盘 |
 | InternVL | `OpenGVLab/InternVL3_5-8B-HF` | 8.5B | 动态切块 ViT | ~17GB | 舒适 | 跨家族 |

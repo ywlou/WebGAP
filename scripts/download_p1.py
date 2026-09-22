@@ -27,7 +27,7 @@ SURVEY = ROOT / "outputs" / "benchmark_survey"
 
 os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
 os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
-os.environ.setdefault("HF_HOME", str(ROOT / ".hf_cache"))
+os.environ.setdefault("HF_HOME", os.environ.get("WEBGAP_MODELS_DIR", "/data/models"))
 
 
 def _as_image(img) -> Image.Image | None:

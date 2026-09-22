@@ -26,6 +26,7 @@ JOBS = [
     ("webgap_dual_mix", "outputs/runs/webgap_dual_mix/checkpoint", "webgap", False, False, False, "dual"),
     ("webgap_ssl_sft", "outputs/runs/webgap_ssl_sft/checkpoint", "webgap", False, False, False, "dual"),
     ("webgap_dual_rand_vis", "outputs/runs/webgap_dual/checkpoint", "random_anchor", False, False, True, "dual"),
+    ("webgap_dual_cg", "outputs/runs/webgap_dual_cg/checkpoint", "webgap", False, False, False, "dual"),
 ]
 
 
@@ -51,6 +52,7 @@ def main():
         cfg.plugin.use_trb = not no_trb
         cfg.plugin.random_anchor_perm = rand_anc
         cfg.plugin.anchor_mode = mode
+        cfg.plugin.conflict_gate = name.endswith("_cg") or "_cg_" in name
         print(f"==== {args.split} {name} mode={mode} ====", flush=True)
         evaluate_webforge(cfg, ck, split=args.split, max_samples=args.max_samples, tag=f"{name}_{args.split}")
 

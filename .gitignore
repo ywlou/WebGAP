@@ -27,7 +27,7 @@ hf_home/
 ms_cache/
 .cache/
 
-# Base model weights (Qwen3-VL-8B ~17GB, plus extra HF home)
+# Base model weights live in /data/models, never in this repo
 checkpoints/
 
 # Regenerable / redownloadable datasets

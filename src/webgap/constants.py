@@ -2,6 +2,13 @@
 
 from __future__ import annotations
 
+import os
+from pathlib import Path
+
+# Base-model weights live outside the repo. Override with WEBGAP_MODELS_DIR.
+MODELS_ROOT = Path(os.environ.get("WEBGAP_MODELS_DIR", "/data/models"))
+DEFAULT_QWEN3VL_8B = MODELS_ROOT / "Qwen" / "Qwen3-VL-8B-Instruct"
+
 # Structural hallucination taxonomy (paper Table 1).
 HALLU_TYPES = ("H1", "H2", "H3", "H4", "H5")
 HALLU_NAMES = {
