@@ -1,0 +1,136 @@
+{
+  "backbone": "Qwen3-VL-8B-Instruct",
+  "mind2web_element_protocol": "positive candidates plus 50 negatives, seed 42, no DeBERTa ranker. test_task / test_website / test_domain are the three official test splits.",
+  "rows": [
+    {
+      "method": "Frozen",
+      "run": "qwen3vl8b_zeroshot",
+      "websrc_em": 86.7,
+      "vwb_element_grounding": 93.0,
+      "vwb_action_grounding": 87.4,
+      "screenspot_web": 91.1,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    },
+    {
+      "method": "LoRA",
+      "run": "lora_sft_public",
+      "websrc_em": 86.7,
+      "vwb_element_grounding": 94.4,
+      "vwb_action_grounding": 88.3,
+      "screenspot_web": 91.3,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    },
+    {
+      "method": "GraphToken",
+      "run": "graphtoken_sft_public",
+      "websrc_em": 85.9,
+      "vwb_element_grounding": 93.7,
+      "vwb_action_grounding": 91.3,
+      "screenspot_web": 84.9,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    },
+    {
+      "method": "HTML prompt",
+      "run": null,
+      "websrc_em": null,
+      "vwb_element_grounding": null,
+      "vwb_action_grounding": null,
+      "screenspot_web": null,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    },
+    {
+      "method": "Layout Prompt",
+      "run": null,
+      "websrc_em": null,
+      "vwb_element_grounding": null,
+      "vwb_action_grounding": null,
+      "screenspot_web": null,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    },
+    {
+      "method": "Set-of-Mark",
+      "run": null,
+      "websrc_em": null,
+      "vwb_element_grounding": null,
+      "vwb_action_grounding": null,
+      "screenspot_web": null,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    },
+    {
+      "method": "UI token selection",
+      "run": null,
+      "websrc_em": null,
+      "vwb_element_grounding": null,
+      "vwb_action_grounding": null,
+      "screenspot_web": null,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    },
+    {
+      "method": "Action-head attention",
+      "run": null,
+      "websrc_em": null,
+      "vwb_element_grounding": null,
+      "vwb_action_grounding": null,
+      "screenspot_web": null,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    },
+    {
+      "method": "WebGAP-V",
+      "run": "webgap_sft_public",
+      "websrc_em": 88.0,
+      "vwb_element_grounding": 94.4,
+      "vwb_action_grounding": 90.3,
+      "screenspot_web": 73.2,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    },
+    {
+      "method": "WebGAP-Dual",
+      "run": "webgap_dual_public",
+      "websrc_em": 85.6,
+      "vwb_element_grounding": 94.9,
+      "vwb_action_grounding": 89.3,
+      "screenspot_web": 33.4,
+      "mind2web_element_acc": {
+        "test_task": null,
+        "test_website": null,
+        "test_domain": null
+      }
+    }
+  ]
+}

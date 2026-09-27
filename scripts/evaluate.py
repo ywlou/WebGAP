@@ -23,6 +23,7 @@ from webgap.eval.generate import generate_fn_for, infer_family, load_eval_model
 from webgap.eval.grounding import SCREENSPOT_PROMPT, score_point_ground, score_websrc
 from webgap.eval.public_graph import StructuredGenerate
 from webgap.eval.metrics import exact_match, score_predictions, token_f1
+from webgap.eval.mind2web_elem import load_candidate_map, prompt_for, score_one
 from webgap.eval.vwb_official import build_prompt, max_new_tokens_for_task, score_vwb
 from webgap.utils.io import ensure_dir, load_jsonl, save_json
 
@@ -339,6 +340,78 @@ def run_mind2web(
     return preds, metrics
 
 
+@torch.no_grad()
+def run_mind2web_elem(
+    model, processor, device: str, max_samples: int, split: str, wrapped: bool, generate, sink: PredSink | None = None
+) -> tuple[list[dict], dict]:
+    """Choose a candidate id. Does not overwrite the action-string metrics."""
+    src = BENCH / "mind2web" / split / "eval.jsonl"
+    rows = _load_rows(src, max_samples)
+    choices = load_candidate_map(split)
+    preds = []
+    gen_model = model.backbone if wrapped and hasattr(model, "backbone") else model
+    elem_hit = op_f1 = 0.0
+    n_missing = 0
+    for r in tqdm(rows, desc=f"mind2web-elem:{split}"):
+        rid = str(r.get("id"))
+        choice = choices.get(rid)
+        if choice is None:
+            n_missing += 1
+            continue
+        cached = sink.cached(rid) if sink else None
+        if cached is not None:
+            preds.append(cached)
+            elem_hit += float(cached.get("element_hit") or 0)
+            op_f1 += float(cached.get("op_f1") or 0)
+            continue
+        img = _open_image(r.get("image") or "")
+        if img is None:
+            continue
+        pred = _predict(
+            generate,
+            gen_model,
+            processor,
+            img,
+            prompt_for(str(r.get("question") or ""), choice),
+            device,
+            48,
+            r,
+        )
+        scored = score_one(pred, choice, choice.get("operation") or r.get("operation"))
+        elem_hit += float(scored["element_hit"])
+        op_f1 += float(scored["op_f1"])
+        preds.append(
+            _emit(
+                sink,
+                {
+                    "id": rid,
+                    "split": split,
+                    "pred": pred,
+                    "pred_id": scored["pred_id"],
+                    "element_hit": scored["element_hit"],
+                    "op_f1": scored["op_f1"],
+                    "n_pos": choice["n_pos"],
+                    "n_neg": choice["n_neg"],
+                },
+            )
+        )
+    n = max(len(preds), 1)
+    metrics = {
+        "n": len(preds),
+        "n_missing_candidates": n_missing,
+        "element_acc": elem_hit / n,
+        "op_f1": op_f1 / n,
+        "split": split,
+        "neg_k": 50,
+        "seed": 42,
+        "note": (
+            "Element accuracy on positive candidates plus 50 negatives sampled with seed 42. "
+            "No DeBERTa ranker. Not MindAct/SeeAct published Element Accuracy."
+        ),
+    }
+    return preds, metrics
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--benchmark", required=True, choices=["visualwebbench", "screenspot_v2", "guiact", "websrc", "mind2web"])
@@ -351,6 +424,12 @@ def main():
     ap.add_argument("--conflict-gate", action="store_true", help="P6 dual conflict-aware mix")
     ap.add_argument("--max-samples", type=int, default=-1)
     ap.add_argument("--subset", default="web", help="screenspot platform filter; mind2web split name")
+    ap.add_argument(
+        "--protocol",
+        default="action",
+        choices=["action", "element"],
+        help="mind2web only: action=string F1; element=candidate id accuracy",
+    )
     ap.add_argument("--out-root", default="outputs/mllm_baselines")
     args = ap.parse_args()
 
@@ -365,7 +444,12 @@ def main():
         cfg.plugin.conflict_gate = True
     family = infer_family(cfg.model.name_or_path, args.family)
     out = ensure_dir(Path(args.out_root) / args.run_name)
-    tag = args.benchmark if args.benchmark != "mind2web" else f"mind2web_{args.subset}"
+    if args.benchmark == "mind2web" and args.protocol == "element":
+        tag = f"mind2web_{args.subset}_elem"
+    elif args.benchmark == "mind2web":
+        tag = f"mind2web_{args.subset}"
+    else:
+        tag = args.benchmark
     metrics_path = out / f"{tag}_metrics.json"
     pred_path = out / f"{tag}_preds.jsonl"
     if metrics_path.exists() and args.max_samples <= 0:
@@ -397,7 +481,8 @@ def main():
             )
         else:
             split = args.subset if args.subset in {"test_website", "test_task", "test_domain"} else "test_website"
-            preds, metrics = run_mind2web(
+            runner = run_mind2web_elem if args.protocol == "element" else run_mind2web
+            preds, metrics = runner(
                 model, processor, cfg.device, args.max_samples, split, wrapped, generate, sink
             )
     finally:
@@ -416,6 +501,7 @@ def main():
             "ckpt": args.ckpt,
             "n": len(preds),
             "subset": args.subset,
+            "protocol": args.protocol,
             "max_samples": args.max_samples,
         },
         metrics_path,
